@@ -21,13 +21,13 @@ import Edit from 'wix-ui-icons-common/Edit';
 import Delete from 'wix-ui-icons-common/Delete';
 
 import { storySettings } from '../test/storySettings';
-import allComponents from '../../../../stories/utils/allComponents';
+import allComponents from '../../../stories/utils/allComponents';
 
 import PopoverMenu from '..';
 
-import IconButton from '../../../IconButton';
+import IconButton from '../../IconButton';
 
-import { placements } from '../../../Popover';
+import { placements } from '../../Popover';
 import testkitDesc from './testkit.md';
 import compound from './compound.md';
 
@@ -105,9 +105,7 @@ export default {
           ]),
 
           columns([
-            importExample(
-              "import {  PopoverMenuNext } from 'wix-style-react';",
-            ),
+            importExample("import {  PopoverMenu } from 'wix-style-react';"),
           ]),
 
           divider(),
