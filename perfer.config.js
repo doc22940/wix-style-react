@@ -23,7 +23,6 @@ const javascriptFiles = [
   ['ColorPicker.bundle.min.js', 80],
   ['ContactItemBuilder.bundle.min.js', 30],
   ['CounterBadge.bundle.min.js', 3.5],
-  ['DataTable.bundle.min.js', 57],
   ['DateInput.bundle.min.js', 75],
   ['DatePicker.bundle.min.js', 94],
   ['Dropdown.bundle.min.js', 78],
