@@ -120,16 +120,6 @@ const imageViewerDriverFactory = ({ element, wrapper, eventTrigger }) => {
       tooltipDriver.mouseEnter();
       return tooltipDriver.getContentElement().textContent;
     },
-
-    // Error - Deprecated
-    /** @deprecated */
-    isErrorVisible: () => !!byHook(dataHooks.errorTooltip),
-    /** @deprecated */
-    getErrorTooltipContent: () => {
-      const errorTooltip = tooltipTestkit(dataHooks.errorTooltip);
-      errorTooltip.mouseEnter();
-      return errorTooltip.getContentElement().textContent;
-    },
   };
 };
 
