@@ -1,2 +1,1 @@
-export const FieldWithSelectionComposite: any;
-export const InputAreaWithLabelComposite: any;
+export const RangeInputWithLabelComposite: any;
