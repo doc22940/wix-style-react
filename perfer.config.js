@@ -51,7 +51,7 @@ const javascriptFiles = [
   ['InputWithOptions.bundle.min.js', 71],
   ['Label.bundle.min.js', 8],
   ['Layout.bundle.min.js', 3],
-  ['LinearProgressBar.bundle.min.js', 35],
+  ['LinearProgressBar.bundle.min.js', 47],
   ['ListItemAction.bundle.min.js', 13],
   ['Loader.bundle.min.js', 44],
   ['Modal.bundle.min.js', 11],

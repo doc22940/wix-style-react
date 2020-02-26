@@ -20,19 +20,14 @@ const linearProgressBarDriverFactory = ({ element, eventTrigger, wrapper }) => {
     eventTrigger,
   });
 
-  const errorIcon = () => getElementByDataHook(dataHooks.errorIcon);
-  const successIcon = () => getElementByDataHook(dataHooks.successIcon);
-  const getTooltip = () => createTooltipDriver();
-
   return {
     ...coreProgressBarDriver,
-    isTooltipShown: () => getTooltip().isContentElementExists(),
-    getTooltip,
-    isErrorIconShown: () => !!errorIcon(),
-    isSuccessIconShown: () => !!successIcon(),
-    getTooltipErrorMessage: async () => {
-      await getTooltip().mouseEnter();
-      return getTooltip().getContentElement().textContent;
+    isErrorIconShown: () => !!getElementByDataHook(dataHooks.errorIcon),
+    isSuccessIconShown: () => !!getElementByDataHook(dataHooks.successIcon),
+    getTooltipErrorMessage: () => {
+      const tooltipDriver = createTooltipDriver();
+      tooltipDriver.mouseEnter();
+      return tooltipDriver.getContentElement().textContent;
     },
     getSkin: () => element.getAttribute('data-skin'),
   };
