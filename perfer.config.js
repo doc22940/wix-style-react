@@ -32,7 +32,7 @@ const javascriptFiles = [
   ['EditableTitle.bundle.min.js', 63],
   ['EmptyState.bundle.min.js', 10],
   ['EndorseContentLayout.bundle.min.js', 9],
-  ['ErrorIndicator.bundle.min.js', 41],
+  ['StatusIndicator.bundle.min.js', 44],
   ['FilePicker.bundle.min.js', 50],
   ['FloatingHelper.bundle.min.js', 49],
   ['FloatingNotification.bundle.min.js', 25],
