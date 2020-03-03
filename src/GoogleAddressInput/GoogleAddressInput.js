@@ -12,7 +12,6 @@ import {
   trySetStreetNumberIfNotReceived,
 } from './google2address';
 import styles from './GoogleAddressInput.scss';
-import deprecationLog from '../utils/deprecationLog';
 
 export const GoogleAddressInputHandler = {
   geocode: 'geocode',
@@ -40,12 +39,6 @@ class GoogleAddressInput extends React.Component {
     this.onFocus = this.onFocus.bind(this);
     this.onSet = this.onSet.bind(this);
     this.onManuallyInput = this.onManuallyInput.bind(this);
-
-    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
-      deprecationLog(
-        '<GoogleAddressInput/> - props error and errorMessage are deprecated. Please use status="error" and statusMessage',
-      );
-    }
   }
 
   UNSAFE_componentWillReceiveProps(nextProps) {
@@ -309,7 +302,6 @@ GoogleAddressInput.displayName = 'GoogleAddressInput';
 
 GoogleAddressInput.defaultProps = {
   magnifyingGlass: true,
-  theme: Input.defaultProps.theme,
   autoSelect: true,
   footerOptions: {},
   clearSuggestionsOnBlur: true,
@@ -346,8 +338,6 @@ GoogleAddressInput.propTypes = {
   /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
   statusMessage: PropTypes.node,
 
-  /** Should display error marker */
-  error: PropTypes.bool,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
@@ -361,7 +351,6 @@ GoogleAddressInput.propTypes = {
 
   /** Show or hide magnifying glass icon */
   magnifyingGlass: PropTypes.bool,
-  theme: Input.propTypes.theme,
 
   /** Sets the input to readOnly */
   readOnly: PropTypes.bool,

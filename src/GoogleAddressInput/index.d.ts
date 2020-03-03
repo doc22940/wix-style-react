@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { OmitPolyfill } from '../common';
-import { InputProps, InputTheme } from '../Input';
+import { InputProps } from '../Input';
 import { GoogleMapsClient } from '../clients';
 
 export interface GoogleAddressInputProps
@@ -14,7 +14,6 @@ export interface GoogleAddressInputProps
   value?: string;
   status?: InputProps['status'];
   statusMessage?: InputProps['statusMessage'];
-  error?: boolean;
   onChange?: React.MouseEventHandler<HTMLButtonElement>;
   onBlur?: React.MouseEventHandler<HTMLButtonElement>;
   onFocus?: React.MouseEventHandler<HTMLButtonElement>;
@@ -32,7 +31,6 @@ export interface GoogleAddressInputProps
   types?: Array<any>;
   filterTypes?: Array<any>;
   placeDetailsFields?: Array<any>;
-  theme?: InputTheme;
   footerOptions?: object;
   handler?: 'geocode' | 'places';
   Client?: GoogleMapsClient;
