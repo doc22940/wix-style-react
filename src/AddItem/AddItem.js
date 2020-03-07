@@ -8,12 +8,11 @@ import AddItemMedium from 'wix-ui-icons-common/system/AddItemMedium';
 import AddItemSmall from 'wix-ui-icons-common/system/AddItemSmall';
 import Add from 'wix-ui-icons-common/Add';
 
+import Tooltip from '../Tooltip';
 import Text from '../Text';
-import TooltipHOC from './components/TooltipHOC';
 import AddMedia from 'wix-ui-icons-common/system/AddMedia';
 import { dataHooks } from './constants';
 import { PopoverCommonProps } from '../commonProps';
-import deprecationLog from '../utils/deprecationLog';
 
 import style from './AddItem.st.css';
 
@@ -52,26 +51,6 @@ class AddItem extends Component {
     /** Tooltip props */
     tooltipProps: PropTypes.shape(PopoverCommonProps),
 
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipAppendTo: PropTypes.oneOf([
-      'window',
-      'scrollParent',
-      'viewport',
-      'parent',
-    ]),
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipFlip: PropTypes.bool,
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipFixed: PropTypes.bool,
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipContent: PropTypes.string,
-
-    /** @deprecated do not use this prop, use tooltipProps prop instead. */
-    tooltipPlacement: PropTypes.string,
-
     /** Displays the plus icon */
     showIcon: PropTypes.bool,
 
@@ -86,25 +65,6 @@ class AddItem extends Component {
     showIcon: true,
     removePadding: false,
   };
-
-  constructor(props) {
-    super(props);
-
-    [
-      'tooltipAppendTo',
-      'tooltipFlip',
-      'tooltipFixed',
-      'tooltipContent',
-      'tooltipPlacement',
-    ].forEach(prop => {
-      if (props.hasOwnProperty(prop)) {
-        deprecationLog(
-          `do not use '${prop}' prop, use 'tooltipProps' prop instead.`,
-          `<AddItem/> - do not use '${prop}' prop, use 'tooltipProps' prop instead.`,
-        );
-      }
-    });
-  }
 
   _renderIcon = () => {
     const { size, theme } = this.props;
@@ -145,22 +105,34 @@ class AddItem extends Component {
       size,
       disabled,
       showIcon,
-      tooltipContent,
+      tooltipProps = {},
     } = this.props;
 
     const container = (
-      <div {...style('content', { theme, size, alignItems, disabled })}>
+      <div
+        {...style('content', {
+          theme,
+          size,
+          alignItems,
+          disabled,
+          tooltip: !!tooltipProps.content,
+        })}
+      >
         {showIcon && this._renderIcon()}
         {this._renderText()}
       </div>
     );
-    return (
-      <TooltipHOC
-        enabled={theme === 'image' && tooltipContent !== ''}
-        {...this.props}
+
+    return theme === 'image' && !!tooltipProps.content ? (
+      <Tooltip
+        {...tooltipProps}
+        dataHook={dataHooks.itemTooltip}
+        className={style.tooltip}
       >
         {container}
-      </TooltipHOC>
+      </Tooltip>
+    ) : (
+      container
     );
   };
 

@@ -37,7 +37,12 @@ class ImageViewer extends Component {
   }
 
   _renderAddImage = () => {
-    const { onAddImage, addImageInfo, tooltipProps, disabled } = this.props;
+    const {
+      onAddImage,
+      addImageInfo,
+      tooltipProps = {},
+      disabled,
+    } = this.props;
 
     return (
       <AddItem
@@ -45,7 +50,6 @@ class ImageViewer extends Component {
         theme="image"
         dataHook={dataHooks.addItem}
         disabled={disabled}
-        tooltipContent={addImageInfo}
         tooltipProps={{ ...tooltipProps, content: addImageInfo }}
       />
     );
