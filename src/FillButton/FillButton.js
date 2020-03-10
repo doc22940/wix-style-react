@@ -26,8 +26,6 @@ class FillButton extends React.PureComponent {
     iconSize: PropTypes.oneOf(['small', 'medium']),
     /** components disable state */
     disabled: PropTypes.bool,
-    /** tooltip content value */
-    tooltipContent: PropTypes.node,
     /** fill value in string. Hex or gradient */
     fill: PropTypes.string,
     /** tooltip common props */
@@ -69,7 +67,6 @@ class FillButton extends React.PureComponent {
       disabled,
       focusableOnBlur,
       focusableOnFocus,
-      tooltipContent,
       dataHook,
       fill,
       iconSize,
@@ -82,9 +79,7 @@ class FillButton extends React.PureComponent {
         appendTo="window"
         disabled={disabled}
         {...tooltipProps}
-        upgrade
         dataHook={dataHook}
-        content={tooltipContent}
         size="small"
       >
         <Proportion className={styles.proportion}>

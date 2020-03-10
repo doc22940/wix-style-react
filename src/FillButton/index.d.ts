@@ -1,12 +1,11 @@
 import * as React from 'react';
-import { PopoverCommonProps } from '../common'
+import { PopoverCommonProps } from '../common';
 
 export interface FillButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   iconSize?: FillButtonIconSize;
   disabled?: boolean;
-  tooltipContent?: React.ReactNode;
   fill?: string;
   tooltipProps?: PopoverCommonProps;
   dataHook?: string;

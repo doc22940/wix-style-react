@@ -6,11 +6,6 @@ export interface ImageViewerProps {
   imageUrl?: string;
   error?: boolean;
   errorMessage?: string;
-  /** Error tooltp placement
-   * @deprecated
-   * @see tooltipProps
-   */
-  tooltipPlacement?: PopoverCommonProps['placement'];
   tooltipProps?: PopoverCommonProps;
   showUpdateButton?: boolean;
   showRemoveButton?: boolean;

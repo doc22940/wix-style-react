@@ -74,7 +74,9 @@ describe('RangeInputWithLabelComposite', () => {
 
     it('should FieldLabelAttributes exists if tooltip', () => {
       const driver = createRangeCompositeDriver(
-        <RangeInputWithLabelComposite tooltip={<Tooltip content="content" />}>
+        <RangeInputWithLabelComposite
+          tooltip={<Tooltip content="content" children={false} />}
+        >
           <Text tagName="label">myLabel</Text>
           <Input />
           <Input />

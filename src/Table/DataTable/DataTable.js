@@ -10,7 +10,7 @@ import { PopoverCommonProps } from '../commonProps';
 
 import styles from './DataTable.scss';
 import InfiniteScroll from '../../utils/InfiniteScroll';
-import Tooltip from '../../Tooltip/Tooltip';
+import Tooltip from '../../Tooltip';
 import InfoIcon from '../../InfoIcon';
 
 import { virtualRowsAreEqual } from './DataTable.utils';
@@ -512,9 +512,6 @@ DataTable.defaultProps = {
   virtualizedLineHeight: 60,
   skin: 'standard',
 };
-
-/* eslint-disable no-unused-vars */
-const { moveBy, dataHook, ...infoTooltipProps } = Tooltip.propTypes;
 
 DataTable.propTypes = {
   dataHook: PropTypes.string,

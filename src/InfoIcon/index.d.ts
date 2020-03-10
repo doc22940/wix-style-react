@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PopoverCommonProps } from '../common'
+import { PopoverCommonProps } from '../common';
 
 export type InfoIconSize = 'small' | 'medium';
 

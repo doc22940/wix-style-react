@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { PopoverCommonProps } from '../common';
-import { OmitPolyfill } from '../common';
 
 export interface AddItemProps {
   disabled?: boolean;
