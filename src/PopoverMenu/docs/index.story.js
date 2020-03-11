@@ -105,7 +105,7 @@ export default {
           ]),
 
           columns([
-            importExample("import {  PopoverMenu } from 'wix-style-react';"),
+            importExample("import { PopoverMenu } from 'wix-style-react';"),
           ]),
 
           divider(),
