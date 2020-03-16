@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {OmitPolyfill} from '../common';
-import {IconElement} from '../common';
+import { OmitPolyfill } from '../common';
+import { IconElement } from '../common';
 
 export type ButtonWithAsProp<T> =
   | ButtonAsButtonProps<T>
@@ -42,6 +42,7 @@ export type ButtonProps = ButtonWithAsProp<{
   prefixIcon?: IconElement;
   disabled?: boolean;
   dataHook?: string;
+  ellipsis?: boolean;
 }>;
 
 export default class Button extends React.Component<ButtonProps> {}

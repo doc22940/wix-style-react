@@ -117,7 +117,7 @@ export default {
           example({
             title: 'Ellipsis',
             text:
-              'If a button container is too small or you set a fixed with to a button and the text does not fit, it will have an ellipsis with a tooltip.',
+              'If a Button parent container is too small and the text does not fit then Button can have ellipsis enabled by passing `ellipsis="true"`',
             source: examples.ellipsis,
           }),
         ],

@@ -15,6 +15,7 @@ import {
   object,
   bool,
   func,
+  PropTypes,
 } from 'prop-types';
 
 class Button extends PureComponent {
@@ -54,6 +55,8 @@ class Button extends PureComponent {
     children: node,
     /** String based data hook */
     dataHook: string,
+    /** Text ellipsis  */
+    ellipsis: bool,
   };
 
   static defaultProps = {
@@ -71,6 +74,7 @@ class Button extends PureComponent {
       fullWidth,
       children,
       dataHook,
+      ellipsis,
       ...rest
     } = this.props;
 
@@ -86,7 +90,7 @@ class Button extends PureComponent {
         )}
         data-hook={dataHook}
       >
-        <EllipsedContent ellipsis>{children}</EllipsedContent>
+        <EllipsedContent ellipsis={ellipsis}>{children}</EllipsedContent>
       </ButtonNext>
     );
   }
@@ -100,7 +104,7 @@ EllipsedContent.propTypes = {
   /** String based node */
   children: node,
 
-  ...ellipsisHOC.propTypes,
+  tooltipProps: PropTypes.shape(ellipsisHOC.propTypes),
 };
 
 export default Button;

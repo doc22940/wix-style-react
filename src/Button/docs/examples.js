@@ -96,6 +96,6 @@ export const custom = `
 
 export const ellipsis = `
 <div style={{ width: '50px' }}>
-  <Button size="medium" fullWidth={true}>Ellipsis</Button>
+  <Button size="medium" fullWidth={true} ellipsis={true}>Ellipsis</Button>
 </div>
 `;
