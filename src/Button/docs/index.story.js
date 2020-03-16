@@ -113,6 +113,13 @@ export default {
                 `,
             source: examples.custom,
           }),
+
+          example({
+            title: 'Ellipsis',
+            text:
+              'If a button container is too small or you set a fixed with to a button and the text does not fit, it will have an ellipsis with a tooltip.',
+            source: examples.ellipsis,
+          }),
         ],
       }),
 

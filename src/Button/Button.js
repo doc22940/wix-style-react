@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { ButtonNext } from 'wix-ui-core/dist/src/components/button-next';
 import { generateDataAttr } from '../utils/generateDataAttr';
 import { isMadefor } from '../FontUpgrade/utils';
+import ellipsisHOC from '../common/EllipsisHOC';
 
 import styles from './Button.st.css';
 
@@ -85,10 +86,21 @@ class Button extends PureComponent {
         )}
         data-hook={dataHook}
       >
-        {children}
+        <EllipsedContent ellipsis>{children}</EllipsedContent>
       </ButtonNext>
     );
   }
 }
+
+const EllipsedContent = ellipsisHOC(({ children, ...rest }) => (
+  <span {...rest}>{children}</span>
+));
+
+EllipsedContent.propTypes = {
+  /** String based node */
+  children: node,
+
+  ...ellipsisHOC.propTypes,
+};
 
 export default Button;

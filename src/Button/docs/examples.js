@@ -93,3 +93,9 @@ export const custom = `
   </Box>
 </Layout>
 `;
+
+export const ellipsis = `
+<div style={{ width: '50px' }}>
+  <Button size="medium" fullWidth={true}>Ellipsis</Button>
+</div>
+`;
