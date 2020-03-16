@@ -153,4 +153,20 @@ describe('Box', () => {
       expect(await driver.getStyle()).toContain(`padding: ${expectedPadding}`);
     });
   });
+
+  describe('formatSizeValue function', () => {
+    it('should render with px suffix when passing a numeric value', async () => {
+      const children = <span>Children</span>;
+      const driver = createDriver(<Box maxHeight={100}>{children}</Box>);
+
+      expect(await driver.getStyle()).toContain(`max-height: 100px`);
+    });
+
+    it('should render as passed when not a number', async () => {
+      const children = <span>Children</span>;
+      const driver = createDriver(<Box minWidth="1.3em">{children}</Box>);
+
+      expect(await driver.getStyle()).toContain(`min-width: 1.3em`);
+    });
+  });
 });

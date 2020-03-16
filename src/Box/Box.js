@@ -41,6 +41,8 @@ const formatSpacingValue = value =>
     ? `${value * spacingUnit}px`
     : spacingValues[value] || `${value}`;
 
+const formatSizeValue = value => (isFinite(value) ? `${value}px` : `{value}`);
+
 const Box = ({
   dataHook,
   children,
@@ -107,12 +109,12 @@ const Box = ({
     marginLeft: formatSpacingValue(marginLeft),
 
     // Sizing
-    minWidth: `${minWidth}`,
-    maxWidth: `${maxWidth}`,
-    width: `${width}`,
-    minHeight: `${minHeight}`,
-    maxHeight: `${maxHeight}`,
-    height: `${height}`,
+    minWidth: formatSizeValue(minWidth),
+    maxWidth: formatSizeValue(maxWidth),
+    width: formatSizeValue(width),
+    minHeight: formatSizeValue(minHeight),
+    maxHeight: formatSizeValue(maxHeight),
+    height: formatSizeValue(height),
 
     // Styling
     color: colors[color] || color,

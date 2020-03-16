@@ -36,8 +36,8 @@ const multipleBoxes = [
     align="center"
     verticalAlign="middle"
     margin={'1px'}
-    width={'80px'}
-    height={'80px'}
+    width={80}
+    height={80}
     color="D70"
     backgroundColor="G10"
     borderRadius={'3px'}
@@ -130,7 +130,7 @@ const tests = [
         it: 'Should be rendered with maxWidth',
         props: {
           ...baseProps,
-          maxWidth: '100px',
+          maxWidth: 100,
         },
       },
     ],
