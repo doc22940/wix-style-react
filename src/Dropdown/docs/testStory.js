@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import TestTabSwitches from '../tests/TestTabSwitches';
+import TestTabSwitches from '../test/TestTabSwitches';
 import { getTestStoryKind } from '../../../stories/storiesHierarchy';
 import { storySettings, testStories } from './storySettings';
 

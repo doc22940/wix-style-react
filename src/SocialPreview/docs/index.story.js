@@ -13,7 +13,7 @@ import {
   testkit,
 } from 'wix-storybook-utils/Sections';
 
-import { storySettings } from '../tests/storySettings';
+import { storySettings } from '../test/storySettings';
 import allComponents from '../../../stories/utils/allComponents';
 
 import SocialPreview from '..';

@@ -5,8 +5,8 @@ import {
   cleanup,
 } from '../../test/utils/react';
 
-import { addItemPrivateDriverFactory } from './tests/AddItem.private.driver';
-import { addItemPrivateUniDriverFactory } from './tests/AddItem.private.uni.driver';
+import { addItemPrivateDriverFactory } from './test/AddItem.private.driver';
+import { addItemPrivateUniDriverFactory } from './test/AddItem.private.uni.driver';
 
 import AddItem from './AddItem';
 
