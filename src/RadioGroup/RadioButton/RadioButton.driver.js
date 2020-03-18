@@ -1,16 +1,19 @@
 import ReactTestUtils from 'react-dom/test-utils';
 
 const radioButtonDriverFactory = ({ element }) => {
-  const radioButton = () => element.childNodes[0];
-  const label = () => element.childNodes[1];
+  const radioWrapper = () => element.childNodes[0];
+  const radioButton = () => radioWrapper().childNodes[0];
+  const label = () => radioWrapper().childNodes[1];
 
   return {
-    exists: () => !!element,
+    exists: () => !!radioWrapper(),
     check: () => ReactTestUtils.Simulate.change(radioButton()),
     isChecked: () => radioButton().checked,
     isDisabled: () => radioButton().disabled,
     getLabel: () => label().textContent,
-    getTabIndex: () => element.getAttribute('tabIndex'),
+    getLabelElement: () => label(),
+    getValue: () => radioButton().value,
+    getTabIndex: () => radioWrapper().getAttribute('tabIndex'),
     getContent: () =>
       element.querySelector('[data-hook="radio-button-content"]'),
   };

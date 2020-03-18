@@ -5,7 +5,7 @@ const radioGroupDriverFactory = component => {
   const getRadioButtonLabel = index =>
     component.$$(`div [data-hook="radio-label"]`).get(index);
   const getRadioButtonRoot = index =>
-    component.all(by.xpath('./div')).get(index);
+    component.all(by.xpath('./div/div')).get(index);
 
   return {
     getButtonDriver: index => buttonDriverFactory(getRadioButtonRoot(index)),

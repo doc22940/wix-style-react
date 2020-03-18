@@ -92,64 +92,68 @@ class RadioButton extends React.PureComponent {
     } = this.props;
 
     return (
-      <div
-        data-hook={dataHook}
-        className={classnames(styles.radioWrapper, {
-          [styles.disabled]: disabled,
-          [styles.checked]: checked,
-        })}
-        style={style}
-        tabIndex={disabled ? null : tabIndex}
-        onFocus={this.props.focusableOnFocus}
-        onBlur={this.props.focusableOnBlur}
-        {...focusableStates(this.props)}
-      >
-        <input
-          type="radio"
-          name={name}
-          value={value}
-          id={this.id}
-          checked={checked}
-          disabled={disabled}
-          onChange={() => (!checked && !disabled ? onChange(value) : null)}
-        />
-
-        <label
-          data-hook="radio-label"
-          style={{ lineHeight }}
-          htmlFor={this.id}
-          className={classnames({
-            [styles.vcenter]: vAlign === 'center',
-            [styles.vtop]: vAlign === 'top',
+      <div className={classnames(styles.optionWrapper)} style={style}>
+        <div
+          className={classnames(styles.radioWrapper, {
+            [styles.disabled]: disabled,
+            [styles.checked]: checked,
           })}
+          data-hook={dataHook}
+          tabIndex={disabled ? null : tabIndex}
+          onFocus={this.props.focusableOnFocus}
+          onBlur={this.props.focusableOnBlur}
+          {...focusableStates(this.props)}
         >
-          <div
-            style={{ height: lineHeight }}
-            className={styles.radioButtonWrapper}
-            data-hook="radiobutton-radio"
+          <input
+            type="radio"
+            name={name}
+            value={value}
+            id={this.id}
+            checked={checked}
+            disabled={disabled}
+            onChange={() => (!checked && !disabled ? onChange(value) : null)}
+          />
+
+          <label
+            data-hook="radio-label"
+            style={{ lineHeight }}
+            htmlFor={this.id}
+            className={classnames({
+              [styles.vcenter]: vAlign === 'center',
+              [styles.vtop]: vAlign === 'top',
+            })}
           >
             <div
-              className={classnames(styles.radio, {
-                [styles.radioButtonChecked]: checked,
-              })}
-            />
-          </div>
-
-          {children && (
-            <Text
-              className={styles.children}
-              data-hook="radiobutton-children"
-              tagName="div"
-              size="medium"
-              weight="thin"
-              secondary
+              style={{ height: lineHeight }}
+              className={styles.radioButtonWrapper}
+              data-hook="radiobutton-radio"
             >
-              {children}
-            </Text>
-          )}
-        </label>
+              <div
+                className={classnames(styles.radio, {
+                  [styles.radioButtonChecked]: checked,
+                })}
+              />
+            </div>
 
-        {content && <div data-hook="radio-button-content">{content}</div>}
+            {children && (
+              <Text
+                className={styles.children}
+                data-hook="radiobutton-children"
+                tagName="div"
+                size="medium"
+                weight="thin"
+                secondary
+              >
+                {children}
+              </Text>
+            )}
+          </label>
+        </div>
+        {content && (
+          <div className={styles.content} data-hook="radio-button-content">
+            {content}
+          </div>
+        )}
       </div>
     );
   }

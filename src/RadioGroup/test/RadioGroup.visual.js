@@ -88,17 +88,33 @@ const tests = [
       },
     ],
   },
+  {
+    describe: 'with content',
+    its: [
+      {
+        it: 'in 2 and 3 radios',
+        radioButtonProps: {
+          '2': {
+            content: '2nd content',
+          },
+          '3': {
+            content: '3rd content',
+          },
+        },
+      },
+    ],
+  },
 ];
 
 tests.forEach(({ describe, its }) => {
-  its.forEach(({ it, props }) => {
+  its.forEach(({ it, props, radioButtonProps = {} }) => {
     storiesOf(`RadioGroup${describe ? '/' + describe : ''}`, module).add(
       it,
       () => (
         <Box direction="vertical">
           <RadioGroup {...defaultProps} {...props}>
             {[1, 2, 3, 4].map(index => (
-              <RadioGroup.Radio value={index}>
+              <RadioGroup.Radio value={index} {...radioButtonProps[`${index}`]}>
                 {props.children || `Option ${index}`}
               </RadioGroup.Radio>
             ))}

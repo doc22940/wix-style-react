@@ -45,6 +45,25 @@ const exampleChildren = [
       </RadioGroup.Radio>,
     ],
   },
+  {
+    label: 'Button with content',
+    value: [
+      <RadioGroup.Radio
+        key={0}
+        value={1}
+        content={'Another details for option 1, not clickable'}
+      >
+        <div>Option 1</div>
+      </RadioGroup.Radio>,
+      <RadioGroup.Radio
+        key={1}
+        value={2}
+        content={'Another details for option 2, not clickable'}
+      >
+        <div>Option 2</div>
+      </RadioGroup.Radio>,
+    ],
+  },
 ];
 
 const exampleOptions = [
@@ -119,6 +138,11 @@ export default {
 
           code({
             source: examples.selectionArea,
+          }),
+
+          code({
+            title: 'Using with content',
+            source: examples.withContent,
           }),
         ],
       }),

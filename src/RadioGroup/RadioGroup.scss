@@ -4,6 +4,13 @@
 $radioButtonCheckedShadow: $B10 0 0 0 1px;
 $radioButtonDisabledShadow: $B50 0 0 0 1px;
 
+.option-wrapper,
+.option-wrapper > * {
+  cursor: initial;
+  box-sizing: border-box;
+  outline: none;
+}
+
 .vertical {
   display: flex;
   flex-direction: column;
@@ -23,13 +30,6 @@ $radioButtonDisabledShadow: $B50 0 0 0 1px;
       background-color: $B40;
     }
   }
-}
-
-.radio-wrapper,
-.radio-wrapper > * {
-  cursor: initial;
-  box-sizing: border-box;
-  outline: none;
 }
 
 .radio-wrapper > input {
@@ -78,20 +78,20 @@ $radioButtonDisabledShadow: $B50 0 0 0 1px;
 }
 
 // Margin between radios in a group
-.vertical :not(:first-child).radio-wrapper {
+.vertical :not(:first-child).option-wrapper {
   margin-top: 12px;
 }
 
 .selectionAreaAlways,
 .selectionAreaHover {
   &.vertical {
-    :not(:first-child).radio-wrapper {
+    :not(:first-child).option-wrapper {
       margin-top: 6px;
     }
   }
 
   &.horizontal {
-    :not(:first-child).radio-wrapper {
+    :not(:first-child).option-wrapper {
       margin-left: 6px;
     }
   }
@@ -187,13 +187,13 @@ button.radioButton {
 }
 
 @include withRTL() {
+  .option-wrapper {
+    direction: rtl;
+  }
+
   .horizontal .radio-wrapper > label {
     margin-right: 0;
     margin-left: 20px;
-  }
-
-  .radio-wrapper {
-    direction: rtl;
   }
 
   .children {
@@ -255,4 +255,8 @@ button.radioButton {
   :not(.disabled).radio-wrapper {
     background-color: $B60;
   }
+}
+
+.content {
+  margin-top: 6px;
 }

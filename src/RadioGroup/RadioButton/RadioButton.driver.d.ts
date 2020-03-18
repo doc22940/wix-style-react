@@ -5,6 +5,8 @@ export interface RadioButtonDriver extends BaseDriver {
   isChecked: () => boolean;
   isDisabled: () => boolean;
   getLabel: () => string;
+  getLabelElement: () => Element;
+  getValue: () => string;
   getTabIndex: () => string | null;
   getContent: () => HTMLElement;
 }
