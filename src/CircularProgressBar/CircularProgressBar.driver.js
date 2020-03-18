@@ -4,7 +4,7 @@ import {
 } from 'wix-ui-core/drivers/vanilla';
 import { dataHooks } from './constants';
 
-export const circularProgressBarDriverFactory = ({
+const circularProgressBarDriverFactory = ({
   element,
   eventTrigger,
   wrapper,
