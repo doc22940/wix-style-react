@@ -80,8 +80,6 @@ const inputDriverFactory = ({ element, wrapper, eventTrigger }) => {
       element.querySelectorAll(
         `.${styles.suffixes} .${styles.suffix}:last-child > .${styles.menuArrow}`,
       ).length === 1,
-    getTooltipElement: () => element,
-    getTooltipDataHook: () => 'input-tooltip',
     getDataHook: () => element.getAttribute('data-hook'),
     getCustomAffix: () => customAffixNode.textContent,
     hasMenuArrow: () => !!menuArrowNode,

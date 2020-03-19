@@ -44,8 +44,6 @@ export interface InputDriver extends BaseDriver {
   prefixComponentExists: (style: string) => boolean;
   suffixComponentExists: (style: string) => boolean;
   isMenuArrowLast: () => boolean;
-  getTooltipElement: () => HTMLElement;
-  getTooltipDataHook: () => 'input-tooltip';
   getDataHook: () => string | null;
   getUnit: () => string;
   getCustomAffix: () => string;

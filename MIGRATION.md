@@ -344,6 +344,8 @@ Testkit:
 - removed `clickMagnifyingGlass`
 - removed `hasExclamation`
 - removed `isNarrowError`
+- removed `getTooltipElement`
+- removed `getTooltipDataHook`
 
 <details>
   <summary>Using <code><span><</span>Input.Affix<span>/></span></code> sub component example:</summary>
