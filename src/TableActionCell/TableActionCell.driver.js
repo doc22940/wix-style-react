@@ -1,23 +1,8 @@
-import ReactTestUtils from 'react-dom/test-utils';
 import { INTERNAL_DRIVER_SYMBOL } from '../../test/utils/private-drivers';
 import { popoverMenuTestkitFactory } from '../../testkit';
 import { tooltipDriverFactory } from 'wix-ui-core/dist/src/components/tooltip/Tooltip.driver';
 import { dataHooks } from './constants';
-
-const buttonDriverFactory = ({ element }) => {
-  return {
-    exists: () => !!element,
-    click: () => ReactTestUtils.Simulate.click(element),
-    focus: () => ReactTestUtils.Simulate.focus(element),
-    blur: () => ReactTestUtils.Simulate.blur(element),
-    mouseEnter: () => ReactTestUtils.Simulate.mouseEnter(element),
-    mouseLeave: () => ReactTestUtils.Simulate.mouseLeave(element),
-    getButtonTextContent: () => element.textContent,
-    isButtonDisabled: () => element.getAttribute('disabled') === '',
-    isPrefixIconExists: () => element.innerHTML.indexOf('prefix') !== -1,
-    isSuffixIconExists: () => element.innerHTML.indexOf('suffix') !== -1,
-  };
-};
+import buttonDriverFactory from '../Button/Button.legacy.driver';
 
 const tableActionCellDriverFactory = ({ element, wrapper, eventTrigger }) => {
   const getPrimaryActionPlaceholder = () =>

@@ -196,6 +196,32 @@ describe('Button', () => {
           expect(disabledAttribute).toEqual(null);
         });
       });
+
+      describe('Content', () => {
+        it('should contain correct content', async () => {
+          const props = {
+            children: 'hello',
+          };
+
+          const { driver } = await render(createButton({ ...props }));
+
+          expect(await driver.getButtonTextContent()).toBe(props.children);
+        });
+      });
+
+      describe('Focus', () => {
+        it('should have focus', async () => {
+          const props = {
+            children: 'hello',
+          };
+
+          const { driver } = await render(createButton({ ...props }));
+
+          expect(await driver.isFocused()).toBe(false);
+          await document.querySelector('[data-hook="button"]').focus();
+          expect(await driver.isFocused()).toBe(true);
+        });
+      });
     });
   });
 });
