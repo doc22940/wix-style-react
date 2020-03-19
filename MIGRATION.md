@@ -1,6 +1,106 @@
 # Upgrading `wix-style-react` to version 8
 ---
 
+Upgrading to version 8 will give you better performacne, better api and most importantly keep you in sync with the continusly ongoing features in the library. Upgrading requires some effort from your side, but in order to make it as smooth as possible we have created this detailed migration guide.
+
+## Imports
+
+### Named imports
+For better performance [(tree-shaking)](https://webpack.js.org/guides/tree-shaking/) we intorudced the named imports.
+Cherry-pick imports are no longer supported, instead you should use the named imports.
+```diff
+- import TextButton from 'wix-style-react/TextButton';
++ import { TextButton } from 'wix-style-react';
+```
+
+### Icons
+Icons import from `wix-style-react` is no longer supported. Instead you should import them from `wix-ui-icons-common`
+```diff
+- import Add from 'wix-style-react/new-icons/Add';
++ import Add from 'wix-ui-icons-common/Add';
+```
+
+### Codemods
+In order to easily replace the mentioned imports, run the following codemods which does it for you:
+```jsx
+npx wix-ui-codemod wix-style-react/named-imports <path>
+npx wix-ui-codemod wix-style-react/icons-common <path>
+```
+
+## Next steps
+The next steps of migration will require you to remove the usage of obsolete components, and in other cases, adapt your usage to api changes.
+All changes are categorized by components in the index section below. But before you dive in, we advise you to take a couple of minutes and get familiar with the changes we did, by reading the following overview section. 
+
+### Migration overview
+
+#### Remove old and deprecated components
+1. The follwing components are removed due to the previous version of the `FormField` component. They were deprecated for a long time and will not be available anymore:
+- `<AutoCompleteComposite/>`
+- `<FieldWithSelectionComposite/>`
+- `<GoogleAddressInputWithLabel/>`
+- `<InputAreaWithLabelComposite/>`
+- `<MultiSelectComposite/>`
+2. The following components are removed due to a more up-to-date APIs
+- `<FullTextView/>`
+- `<HBox/>`, `<VBox/>`
+- `<StatsWidget/>`
+- `<TextLink/>`
+3. - Remove `SideMenu` in favor of the new up-to-date and easy to use `SideBar` component:
+- `<SideMenu/>` `<SideMenuDrill/>`
+4. Remove `<DataTable/>` - This component became _internal_ and should not be used directly - use `<Table/>` instead
+- `<DataTable/>`
+#### Standardize components with tooltip props configuration
+change the usage of internal tooltips - instead of passing specific props (e.g. `tootlipContent`), you are now allowed to propagate the entire `tooltipProps`
+- `<AddItem/>`
+- `<FillButton/>`
+- `<ImageViewer/>`
+#### Standardize input components message indications
+ Changed message indication to `status` and `statusMessage` instead of `error`, `errorMessage`, `help` and `helpMessage`.
+ - `<ColorInput/>`
+ - `<DatePicker/>`
+ - `<Dropdown/>`
+ - `<GoogleAddressInput/>`
+ - `<ImageViewer/>`
+ - `<Input/>`
+ - `<InputArea/>`
+ - `<InputWithOptions/>`
+ - `<MultiSelect/>`
+ - `<NoBorderInput/>`
+ - `<NumberInput/>`
+ - `<RichTextInputArea/>`
+ - `<Search/>`
+ #### Remove old skins and themes
+The library contained a lot of old code, including unsupported styles of the design system. Many components used a `theme` prop that is now removed
+- `<DropdownLayout/>`
+- `<GoogleAddressInput/>`
+- `<Input/>`
+- `<InputArea/>`
+- `<MultiSelect/>`
+- `<NoBorderInput/>`
+- `<NumberInput/>`
+- `<Search/>`
+ #### More general changes
+- `<Avatar/>` - remove old and deprecated colors.
+- `<CircularProgressBar/>` - remove exeperimental dynamic loading, in favor of future improvements. also remove legacy driver methods.
+-` <DatePicker/>` - change `isOpen` to `initialOpen`
+- `<Input/>` - removed legacy sub component `<Input.Units/>` and the `magnifyingGlass` props
+- `InputArea/>` - removed `onTooltipShow
+- `<LinearProgressBar/>` - remove exeperimental dynamic loading, in favor of future improvements. also remove legacy driver methods.
+- `<Loader/>` - remove exeperimental dynamic loading, in favor of future improvements.
+- `<RadioGroup/>` - remove `type`, a deprecated skin of the radio group in favor of the `<SegmentedToggle/>` component
+- `<StatisticsWidget/>` - remove `statistics` prop.
+- `<Table/>` - remove `clickRowChecbox` - removed due to typo, use `clickRowCheckbox` instead
+- `<TableActionCell/>` - use new `Tooltip` component internally and rename the `primaryAction.theme` prop to `primaryAction.skin`
+- `<Tag/>` - wrap text by default.
+### Bigger Topics
+- `<InputWithOptions/>` (and the entire dropdown family) - change default behavior to not call `clickOutside` when popover is closed.
+- `<Popover/>`  - change default behavior to not call `clickOutside` when popover is closed.
+- `<Page/>` - remove `upgrade`, to better performance, new API features and slickness.
+- `<PopoverMenu/>` - Change implementation to the previously `beta PopoverMenu`
+- `<Tooltip/>` - Change implemenation to the upraded `Tooltip`
+
+Now when you are more familiar with the changes of the new version, you can use the detailed instructions for the different components, which are used in your codebase.
+
 ## Index
 <span style="color:#c30000">links don't work in Storybook - only in GitHub. sorry for the inconvenience.</span>
 - [Components](#components)
@@ -1008,9 +1108,6 @@ Props:
 
 ## \<Tooltip/>
 
-Props:
-- removed `upgrade` - component is now upgraded by default
-
 ### New Tooltip features
 - Is Uncontrolled, and only open on HOVER, as per the UX guidelines.
 - Uses community backed positioning mechanism `Popper.js`.
@@ -1018,60 +1115,53 @@ Props:
 - Provides clear documentation on how to achieve various way of positioning.
 - Uses unidriver.
 
-### Deprecated props
-- `active` - deprecated. Component is uncontrolled component.
+### Removed props
+The following props are not supported anymore and should be remove from your code:
+- `active` - Component is uncontrolled component.
+- `bounce` - Not supported by UX guidelines.
+- `color` - Changing Tooltip theming is not supported.
+- `disabled` - Component will read its children props to disable itself.
+- `hideTrigger` - Component is uncontrolled.
+- `lineHeight` - Text alignment is fixed by internal constants.
+- `minWidth`
+- `onClickOutside` - Not supported anymore. Component is interactive only on mouse enter or mouse leave.
+- `padding` - Not supported by UX guidelines.
+- `popover`
+- `relative`
+- `shouldCloseOnClickOutside`
+- `shouldUpdatePosition`
+- `showImmediately`
+- `showTrigger`
+- `theme`
+- `upgrade`
+
+The following props were changed/removed and require you to modify your code accordingly:
 - `alignment` - changed to `textAlign` and supports only `center` and `start`.
-- `appendByPredicate` - deprecated. Use `appendTo` values.
-- `appendToParent` - deprecated. Use `appendTo` with value `parent`.
-- `bounce` - deprecated. Not supported by UX guidelines.
-- `color` - deprecated. Changing Tooltip theming is not supported.
-- `disabled` - deprecated. Component will read its children props to disable itself.
+- `appendByPredicate` -  Use `appendTo` values instead.
+- `appendToParent` - Use `appendTo` with value `parent`.
 - `hideDelay` - changed to `exitDelay`.
-- `hideTrigger` - deprecated. Component is uncontrolled.
-- `lineHeight` - deprecated. Text alignment is fixed by internal constants.
-- `minWidth` - deprecated.
-- `moveArrowTo` - deprecated. Not supported by UX guidelines. Use `placement` to achieve it different arrow position.
-- `onClickOutside` - deprecated. Not supported anymore. Component is interactive only on mouse enter or mouse leave.
-- `padding` - deprecated. Not supported by UX guidelines.
-- `popover` - deprecated.
-- `relative` - deprecated.
-- `shouldCloseOnClickOutside` - deprecated.
-- `shouldUpdatePosition` - deprecated.
-- `showArrow` - deprecated. Use `size` with value `small`.
+- `moveArrowTo` - Not supported by UX guidelines. Use `placement` to achieve it different arrow position.
+- `showArrow` - Use `size` with value `small`.
 - `showDelay` - changed to `enterDelay`.
-- `showImmediately` - deprecated.
-- `showTrigger` - deprecated. Component is uncontrolled.
 - `size` - values are change from `normal, large` to `small, medium` by UX guidelines.
-- `theme` - deprecated. Only one theme is supported and its `dark` theme.
+
 
 ### New props
 - `fixed` - whether to enable the fixed behaviour. This behaviour is used to keep the Tooltip at it's original placement even when it's being positioned outside the boundary.
 - `flip` - whether to enable the flip behaviour. This behaviour is used to flip the Tooltips placement when it starts to overlap the target element.
 
-### Testkit Deprecations
-** New Unit (React/Enzyme) Testkits Are _Async_ ! **<br>
-New tooltip testkit is written with UniDriver which means that ReactTestUtils, Enzyme, Puppeteer and Protractor are now supported by default.<br>
-** New Testkit import path. `import { TooltipTestkit } from 'wix-style-react/dist/...'` **
+### Testkit
+Testkit was rewritten and is now async, which means you should `await` for every method invocation.
+You should change the import path accordingly:
 
-Deprecated Unit API
-- `isShown` - deprecated.
-- `focus` - deprecated.
-- `blue` - deprecated.
-- `click` - deprecated.
-- `hasErrorTheme` - deprecated.
-- `hasDarkTheme` - deprecated.
-- `hasLightTheme` - deprecated.
-- `hasArrow` - deprecated.
-- `getTooltipWrapper` - deprecated.
-- `getChildren` - deprecated.
-- `getPlacement` - deprecated.
-- `getContent` - deprecated.
+- `ReactTestUtils` - `import {tooltipTestkitFactory} from 'wix-style-react/dist/testkit';`
+- `Enzyme` - `import {tooltipTestkitFactory} from 'wix-style-react/dist/testkit/enzyme';`
+- `Puppeteer` - `import {tooltipTestkitFactory} from 'wix-style-react/dist/testkit/puppeteer';`
+- `Protractor` - `import {tooltipTestkitFactory} from 'wix-style-react/dist/testkit/protractor';`
 
-Deprecated E2E Testkit API
-- `element` - deprecated.
-- `getTooltipTextContent` - deprecated.
+### New API
+API is slimmer and easier to interact it (with the recent types addition you can get an auto complete of these methods)
 
-New Uni Testkit API
 - `exists` - returns true if trigger element exists on the DOM.
 - `tooltipExists` - returns true if tooltip element exists on the DOM.
 - `mouseEnter` - mouse over the target element.
