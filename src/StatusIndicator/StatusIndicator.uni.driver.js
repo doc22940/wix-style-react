@@ -3,10 +3,8 @@ import { tooltipDriverFactory } from '../Tooltip/Tooltip.uni.driver';
 import { dataHooks } from './constants';
 
 export const statusIndicatorDriverFactory = (base, body) => {
-  const tooltipDriver = tooltipDriverFactory(
-    base.$(`[data-hook="${dataHooks.tooltip}"]`),
-    body,
-  );
+  const getTooltipDriver = () =>
+    tooltipDriverFactory(base.$(`[data-hook="${dataHooks.tooltip}"]`), body);
 
   return {
     ...baseUniDriverFactory(base, body),
@@ -15,10 +13,11 @@ export const statusIndicatorDriverFactory = (base, body) => {
     getStatus: () => base.attr('data-status'),
 
     /** Returns true iff a message was provided */
-    hasMessage: tooltipDriver.exists,
+    hasMessage: () => getTooltipDriver().exists(),
 
     /** Returns the message text */
     getMessage: async () => {
+      const tooltipDriver = getTooltipDriver();
       if (await tooltipDriver.exists()) {
         await tooltipDriver.mouseEnter();
         return await tooltipDriver.getTooltipText();
