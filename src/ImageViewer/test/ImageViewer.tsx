@@ -27,7 +27,6 @@ function ImageViewerWithAllProps() {
       removeRoundedBorders
       showRemoveButton
       showUpdateButton
-      tooltipPlacement="top"
       tooltipProps={{}}
       updateImageInfo=""
       width=""

@@ -22,7 +22,6 @@ function AddItemWithAllProps() {
       size="large"
       theme="dashes"
       tooltipProps={{
-        content: 'content',
       }}
     />
   );
