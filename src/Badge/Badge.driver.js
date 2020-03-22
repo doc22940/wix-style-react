@@ -2,7 +2,7 @@ const badgeDriverFactory = ({ element, eventTrigger }) => {
   return {
     /** checks if element exists */
     exists: () => !!element,
-    /** returns elements innerHtml */
+    /** returns elements innerHTML*/
     getContent: () => element.innerHTML,
     /** returns elements text */
     text: () => element.textContent,
@@ -11,10 +11,6 @@ const badgeDriverFactory = ({ element, eventTrigger }) => {
     getSize: () => element.getAttribute('data-size'),
     isUppercase: () => element.getAttribute('data-uppercase') === 'true',
     hasClickCursor: () => element.getAttribute('data-clickable') === 'true',
-    /** @deprecated use your own dataHook on prefix element instead */
-    getPrefixIcon: () => element.querySelector('[data-prefix-icon="true"]'),
-    /** @deprecated use your own dataHook on suffix element instead */
-    getSuffixIcon: () => element.querySelector('[data-suffix-icon="true"]'),
     click: () => eventTrigger.click(element),
   };
 };

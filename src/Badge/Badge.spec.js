@@ -105,24 +105,10 @@ describe('Badge', () => {
         expect(await driver.text()).toBe('Hello');
       });
 
-      it('should not have any icons by default', async () => {
-        const driver = createDriver(<Badge>Hello</Badge>);
-        expect(!!(await driver.getPrefixIcon())).toBe(false);
-        expect(!!(await driver.getSuffixIcon())).toBe(false);
-      });
-
-      it('should have prefix icon', async () => {
-        const driver = createDriver(
-          <Badge prefixIcon={<Email />}>Hello</Badge>,
-        );
-        expect(!!(await driver.getPrefixIcon())).toBe(true);
-      });
-
-      it('should have suffix icon', async () => {
-        const driver = createDriver(
-          <Badge suffixIcon={<Email />}>Hello</Badge>,
-        );
-        expect(!!(await driver.getSuffixIcon())).toBe(true);
+      it('should have content', async () => {
+        const content = 'Hello Badge!';
+        const driver = createDriver(<Badge>{content}</Badge>);
+        expect(await driver.getContent()).toContain(content);
       });
     });
   }

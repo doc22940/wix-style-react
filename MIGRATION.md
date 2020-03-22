@@ -108,6 +108,7 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [\<AddItem/>](#additem)
   - [\<Avatar/>](#avatar)
   - [\<AutoCompleteComposite/>](#autocompletecomposite)
+  - [\<Badge/>](#badge)
   - [\<CircularProgressBar/>](#circularprogressbar)
   - [\<ColorInput/>](#colorinput)
   - [\<DataTable/>](#datatable)
@@ -237,6 +238,41 @@ This component was deleted, use `<FormField/>` instead.
   <FormField>
     <Component />
   </FormField>
+  ```
+</details>
+
+## \<Badge/>
+
+Testkit:
+- removed `getPrefixIcon` - use your own dataHook on prefix element instead.
+- removed `getSuffixIcon` - use your own dataHook on suffix element instead.
+
+<details>
+  <summary>Using own dataHook over <code>getPrefixIcon</code> example:</summary>
+
+  - Before:
+  ```jsx
+  it('should have suffix icon', async () => {
+    const driver = createDriver(
+      <Badge suffixIcon={<Email />}>Hello</Badge>,
+    );
+    expect(!!(await driver.getSuffixIcon())).toBe(true);
+  });
+  ```
+
+  - After:
+  ```jsx
+  it('should have suffix icon', async () => {
+    const dataHook = 'dataHook';
+    const driver = createDriver(
+      <Badge
+        suffixIcon={ <Email data-hook={dataHook} /> }
+      >
+        Hello
+      </Badge>,
+    );
+    expect(document.querySelector(`[data-hook="${dataHook}"]`)).toBeTruthy();
+  });
   ```
 </details>
 
