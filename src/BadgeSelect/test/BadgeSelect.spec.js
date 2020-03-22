@@ -58,11 +58,6 @@ describe('BadgeSelect', () => {
       expect(await badgeDriver.isUppercase()).toBe(true);
     });
 
-    it('should render badge with a suffix icon', async () => {
-      const { badgeDriver } = createComponent();
-      expect(await badgeDriver.getSuffixIcon()).toBe.defined;
-    });
-
     it('should show badge with props given', async () => {
       const { badgeDriver } = createComponent({
         type: TYPE.outlined,
