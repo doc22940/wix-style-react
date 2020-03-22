@@ -74,7 +74,7 @@ change the usage of internal tooltips - instead of passing specific props (e.g. 
 - `<FillButton/>`
 - `<ImageViewer/>`
 #### Standardize input components message indications
- Changed message indication to `status` and `statusMessage` instead of `error`, `errorMessage`, `help` and `helpMessage`.
+ Changed message indication to `status` and `statusMessage` instead of `error`, `errorMessage`, `help` & `helpMessage`.
  - `<ColorInput/>`
  - `<DatePicker/>`
  - `<Dropdown/>`
@@ -258,7 +258,8 @@ This component was deleted, use `<FormField/>` instead.
 ## \<CircularProgressBar/>
 
 Props:
-- removed `shouldLoadAsync` - we decided to remove this feature.
+- removed `shouldLoadAsync` - we decided to remove this feature.<br>
+  Just remove this prop, no other change required.
 
 Testkit:
 - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of `Promise<string>`.
@@ -270,7 +271,7 @@ Testkit:
 Props:
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -290,7 +291,7 @@ Props:
 - removed `isOpen` - use `initialOpen` instead.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 <details>
@@ -312,7 +313,7 @@ Props:
 Props:
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 ## \<DropdownLayout/>
@@ -402,7 +403,7 @@ Props:
 - removed `theme`
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 ## \<HBox/>
@@ -449,7 +450,7 @@ Testkit:
 Props:
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 - removed sub component `<Input.Units/>` use `<Input.Affix/>` component instead
 - removed `magnifyingGlass` use `<Search/>` component instead
@@ -491,7 +492,7 @@ Props:
 - removed `theme`.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -541,7 +542,8 @@ Props:
 ## \<LinearProgressBar/>
 
 Props:
-- removed `shouldLoadAsync` - we decided to remove this feature.
+- removed `shouldLoadAsync` - we decided to remove this feature.<br>
+  Just remove this prop, no other change required.
 
 Testkit:
 - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`.
@@ -551,7 +553,8 @@ Testkit:
 ## \<Loader/>
 
 Props:
-- removed `shouldLoadAsync` - we decided to remove this feature.
+- removed `shouldLoadAsync` - we decided to remove this feature.<br>
+  Just remove this prop, no other change required.
 
 ## \<MultiSelect/>
 
@@ -559,7 +562,7 @@ Props:
 - removed `theme`.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -597,7 +600,7 @@ Props:
 - removed `theme`.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -612,7 +615,7 @@ Props:
 - removed `theme`.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -758,7 +761,7 @@ Testkit:
 Props:
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -775,7 +778,7 @@ Props:
 - removed `theme`.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
@@ -1268,7 +1271,7 @@ After:
 ## help prop
 
 Props:
-- removed `help` and `helpMessage` use a `<FormField/>` wrapper instead
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead
 
 Testkit:
 - removed `hasHelp` - use `<FormField/>` testkit instead
