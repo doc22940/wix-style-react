@@ -13,7 +13,7 @@ describe('babel-plugin-src-to-es', () => {
       state: {
         opts: {
           esToSrc: false,
-          libsName: ['wix-ui-core', 'wix-ui-backoffice'],
+          libsName: ['wix-ui-core'],
         },
       },
     };
@@ -36,7 +36,7 @@ describe('babel-plugin-src-to-es', () => {
       state: {
         opts: {
           esToSrc: true,
-          libsName: ['wix-ui-core', 'wix-ui-backoffice'],
+          libsName: ['wix-ui-core'],
         },
       },
     };

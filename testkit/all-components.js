@@ -10,7 +10,6 @@ const NON_COMPONENT_FOLDER = [
   'mixins',
   'common',
   'FieldLabelAttributes',
-  'Backoffice',
   'BaseComponents',
   'Typography',
   'Foundation',

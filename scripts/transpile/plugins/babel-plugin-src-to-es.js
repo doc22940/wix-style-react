@@ -6,10 +6,7 @@ module.exports = function() {
     name: 'src-to-es',
     visitor: {
       ImportDeclaration(path, state) {
-        const {
-          esToSrc = false,
-          libsName = ['wix-ui-core', 'wix-ui-backoffice'],
-        } = state.opts;
+        const { esToSrc = false, libsName = ['wix-ui-core'] } = state.opts;
 
         const originalPath = path.node.source.value;
 
