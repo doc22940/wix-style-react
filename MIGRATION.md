@@ -17,12 +17,12 @@ Some examples:
 ### Order of migration
 This is the suggested flow as we see it
 
-1. Change the [Import Statements](#Import Statements) of the named-imports and the the icons.
-1. Remove [obsolete components](#Remove old and deprecated components), for example `AutoCompleteComposite`
+1. Change the import statements to named-imports and to the icons library.
+1. Remove old and deprecated components like `AutoCompleteComposite`
 1. Change components with `upgrade` prop like `Tooltip` and `Page`.
 1. Change from `PopoverMenu` to the `PopoverMenu` which is stated as `beta` - it becomes the official `PopoverMenu` in wsr8.
-1. Change the [status message](#Standardize input components message indications) of all input/selection family components by using `status` and `statusMessage` instead of `error` and `errorMessage`.
-1. Handle all [the reset of the changes](#More general changes) as mentioned below. Just serach in your code for each component and see check for changes
+1. Change of all input/selection family components to "status message" standard by using `status` and `statusMessage` instead of `error` and `errorMessage`.
+1. Handle all other general changes as mentioned below. Just serach in your code for each component and see apply the changes
 
 
 ### "File by File" vs. "Component by Component" strategies
