@@ -201,7 +201,7 @@ export default {
     },
   },
   ToggleButton: {
-    props: { tooltipContent: 'Crop & Rotate', children: <CropRotate /> },
+    props: { labelValue: 'Crop & Rotate', children: <CropRotate /> },
   },
 
   Button: {

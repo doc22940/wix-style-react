@@ -145,6 +145,7 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [\<Table/>](#table)
   - [\<TableActionCell/>](#tableactioncell)
   - [\<Tag/>](#tag)
+  - [\<ToggleButton/>](#togglebutton)
   - [\<Tooltip/>](#tooltip)
   - [\<VBox/>](#vbox)
 
@@ -1132,6 +1133,32 @@ Props:
 Props:
 - removed `wrap` - now text has ellipsis by default<br>
   Just remove this prop, no other change required.
+
+## \<ToggleButton/>
+
+Props:
+- removed `tooltipContent` - use `labelValue` instead.
+
+Testkit:
+- removed `getTooltipText` - use `getLabelValue` instead.
+
+<details>
+  <summary>Using <code>labelValue</code> prop example:</summary>
+
+  Before:
+  ```jsx
+  <ToggleButton
+    tooltipContent="Hello World!"
+  />
+  ```
+
+  - After:
+  ```jsx
+  <ToggleButton
+    labelValue="Hello World!"
+  />
+  ```
+</details>
 
 ## \<Tooltip/>
 

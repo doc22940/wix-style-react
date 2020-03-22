@@ -11,8 +11,6 @@ export type ToggleButtonProps = ButtonWithAsProp<{
   labelValue?: React.ReactNode;
   labelPlacement?: 'tooltip' | 'bottom' | 'end';
   labelEllipsis?: boolean;
-  /** @deprecated use labelValue instead */
-  tooltipContent?: React.ReactNode;
   tooltipProps?: PopoverCommonProps;
 }>;
 

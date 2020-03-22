@@ -28,8 +28,6 @@ export const toggleButtonDriverFactory = (base, body) => {
     getSkin: async () => await base.attr('data-skin'),
     /** returns true if button is selected */
     isButtonSelected: async () => (await base.attr('data-selected')) === 'true',
-    /** @deprecated use `getLabelValue` instead */
-    getTooltipText,
     /** returns label placement value */
     getLabelPlacement,
     /** returns label value */

@@ -19,8 +19,12 @@ function ToggleButtonWithAllProps() {
       onClick={_ev => {}}
       selected
       skin="dark"
-      tooltipContent="content"
       tooltipProps={{}}
+      labelEllipsis
+      labelPlacement="tooltip"
+      labelValue="hello"
+      size="medium"
+      children={<div />}
     />
   );
 }
@@ -28,18 +32,18 @@ function ToggleButtonWithAllProps() {
 async function testkits() {
   const testkit = toggleButtonTestkitFactory({
     dataHook: 'hook',
-    wrapper: document.createElement('div')
+    wrapper: document.createElement('div'),
   });
 
   const enzymeTestkit = toggleButtonEnzymeTestkitFactory({
     dataHook: 'hook',
-    wrapper: enzyme.mount(<div />)
+    wrapper: enzyme.mount(<div />),
   });
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   const puppeteerTestkit = await toggleButtonPuppeteerTestkitFactory({
     dataHook: 'hook',
-    page
+    page,
   });
 }

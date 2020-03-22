@@ -60,18 +60,6 @@ describe('ToggleButton', () => {
     });
   });
 
-  describe('deprecated `tooltipContent` prop', () => {
-    it('should set tooltip content from `tooltipContent` prop', async () => {
-      const props = {
-        tooltipContent: 'crop&rotate',
-        children: <CropRotate />,
-      };
-      const { driver } = render(<ToggleButton {...props} />);
-
-      expect(await driver.getLabelValue()).toEqual('crop&rotate');
-    });
-  });
-
   describe('Label placement ', () => {
     const dataHook = dataHooks.iconOfToggleButton;
 

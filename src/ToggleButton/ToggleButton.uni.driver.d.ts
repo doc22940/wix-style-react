@@ -5,8 +5,6 @@ export interface ToggleButtonUniDriver extends BaseUniDriver {
   isButtonDisabled: ButtonNextDriver['isButtonDisabled'];
   getSkin: () => Promise<string | null>;
   isButtonSelected: () => Promise<boolean>;
-  /** @deprecated use `getLabelValue` instead */
-  getTooltipText: () => Promise<string>;
   getLabelPlacement: () => Promise<string>;
   getLabelValue: () => Promise<string>;
 }
