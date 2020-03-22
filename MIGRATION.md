@@ -71,7 +71,7 @@ npx wix-ui-codemod wix-style-react/icons-common <path-to-your-project>
 - `<StatsWidget/>`
 - `<TextLink/>`
 
-3. - Remove `SideMenu` `SideMenuDrill` in favor of the new up-to-date and easy to use `SideBar` component:
+3. Remove `SideMenu` `SideMenuDrill` in favor of the new up-to-date and easy to use `SideBar` component:
 
 4. Remove `<DataTable/>` - This component became _internal_ and should not be used directly - use `<Table/>` instead.
 
@@ -232,8 +232,7 @@ _Note: `tooltipProps` are defined in Tooltip component story page._
 ## \<Avatar/>
 
 Props:
-- `color` - Deprecated old values: 'blue', 'green', 'grey', 'red', 'orange'.
-- new values are now A1 to A6.
+- `color` - Deprecated old values: 'blue', 'green', 'grey', 'red', 'orange'. the new values are now A1 to A6.
 
 <details>
   <summary>Using new <code>color</code> prop values example:</summary>
@@ -309,8 +308,7 @@ Testkit:
 ## \<CircularProgressBar/>
 
 Props:
-- removed `shouldLoadAsync` - we decided to remove this feature.<br>
-  Just remove this prop, no other change required.
+- removed `shouldLoadAsync` - an experimental flag for testing dynamic imports and safe to remove.
 
 Testkit:
 - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of `Promise<string>`.
@@ -610,13 +608,12 @@ This component was deleted, use `<FormField/>` instead.
 Props:
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `disableClickOutsideWhenClosed`, this functionality is now permanent <br/>
-  Just remove this prop, no other change required.
+- removed `disableClickOutsideWhenClosed`, this functionality is now permanent. This means the `onClickoutside` callback will no longer be called when the component is in it's collpased state.
 
 ## \<Label/>
 
 This component was deleted.<br>
-Depends on your use case, you can use on of the following:
+Depends on your use case, you can use one of the following:
 - `<FormField/>`
 - `<Text tagName="label">`
 
@@ -658,8 +655,7 @@ Depends on your use case, you can use on of the following:
 ## \<LinearProgressBar/>
 
 Props:
-- removed `shouldLoadAsync` - we decided to remove this feature.<br>
-  Just remove this prop, no other change required.
+- removed `shouldLoadAsync` - an experimental flag for testing dynamic imports and safe to remove.
 
 Testkit:
 - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`.
@@ -669,8 +665,7 @@ Testkit:
 ## \<Loader/>
 
 Props:
-- removed `shouldLoadAsync` - we decided to remove this feature.<br>
-  Just remove this prop, no other change required.
+- removed `shouldLoadAsync` - an experimental flag for testing dynamic imports and safe to remove.
 
 ## \<MessageBoxFunctionalLayout/>
 
@@ -771,12 +766,10 @@ Previously we required that the Page's parent container will have these styles:
 }
 ```
 
-Now it is enough that the parent has a determined height.
+Now it is enough to pass in the determined height.
 
 ```jsx
-<div style={{height: '100vh'}}>
-  <Page/>
-</div>
+<Page height="100vh"/>
 ```
 
 IMPORTANT: If your page is already in an App structure, your Page container may already have a determined height!
@@ -820,8 +813,7 @@ This will stretch:
 ## \<Popover/>
 
 Props:
-- removed `disableClickOutsideWhenClosed`, this functionality is now permanent <br/>
-  Just remove this prop, no other change required.
+- removed `disableClickOutsideWhenClosed`, this functionality is now permanent. This means the `onClickoutside` callback will no longer be called when the component is in it's collpased state.
 
 ## \<PopoverMenu/>
 
@@ -1328,7 +1320,7 @@ You should change the import path accordingly:
 - `Puppeteer` - `import {tooltipTestkitFactory} from 'wix-style-react/dist/testkit/puppeteer';`
 - `Protractor` - `import {tooltipTestkitFactory} from 'wix-style-react/dist/testkit/protractor';`
 
-### New API
+### New Testkit API
 API is slimmer and easier to interact it (with the recent types addition you can get an auto complete of these methods)
 
 - `exists` - returns true if trigger element exists on the DOM.
