@@ -26,7 +26,7 @@ In order to easily replace the mentioned imports, run the following codemods whi
 ```jsx
 npx wix-ui-codemod wix-style-react/named-imports <path>
 npx wix-ui-codemod wix-style-react/icons-common <path>
-``` 
+```
 
 ## Next steps
 The next steps of migration will require you to remove the usage of obsolete components, and in other cases, adapt your usage to api changes.
@@ -170,7 +170,7 @@ _Note: `tooltipProps` are defiled in Tooltip component story page._
 <details>
   <summary>Using <code>tooltipProps</code> prop example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <AddItem
     tooltipAppendTo="window"
@@ -181,7 +181,7 @@ _Note: `tooltipProps` are defiled in Tooltip component story page._
   />
   ```
 
-  After:
+  - After:
   ```jsx
   <AddItem
     tooltipProps={
@@ -204,12 +204,12 @@ Props:
 <details>
   <summary>Using new <code>color</code> prop values example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <Avatar color="red" />
   ```
 
-  After:
+  - After:
   ```jsx
   <Avatar color="A1" />
   ```
@@ -222,7 +222,7 @@ This component was deleted, use `<FormField/>` instead.
 <details>
   <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <AutoCompleteComposite>
     <Component />
@@ -279,7 +279,7 @@ Props:
 <details>
   <summary>Using <code>initialOpen</code> prop example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <DatePicker isOpen/>
   ```
@@ -313,7 +313,7 @@ This component was deleted, use `<FormField/>` instead.
 <details>
   <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <FieldWithSelectionComposite>
     <Component />
@@ -338,7 +338,7 @@ _Note: `tooltipProps` are defiled in Tooltip component story page._
 <details>
   <summary>Using <code>tooltipContent</code> prop example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <FillButton tooltipContent="hello" />
   ```
@@ -364,7 +364,7 @@ This component was deleted, use `<FormField/>` instead.
 <details>
   <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <GoogleAddressInputWithLabel>
     <Component />
@@ -410,7 +410,7 @@ Testkit:
 <details>
   <summary>Using <code>tooltipContent</code> prop example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <ImageViewer
     tooltipPlacement="top"
@@ -435,7 +435,7 @@ Props:
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 - removed sub component `<Input.Units/>` use `<Input.Affix/>` component instead
-- removed `magnifyingGlass` use `<Search/>` component instead
+- removed `magnifyingGlass` use `<Input.Affix/>` or `<Search/>` component instead. (see example below)
 - removed `theme`
 
 Testkit:
@@ -452,7 +452,7 @@ Testkit:
 <details>
   <summary>Using <code><span><</span>Input.Affix<span>/></span></code> sub component example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <Dropdown
     prefix={<Input.Units>$</Input.Units>}
@@ -464,6 +464,29 @@ Testkit:
   <Dropdown
     prefix={<Input.Affix>$</Input.Affix>}
   />
+  ```
+</details>
+
+<details>
+  <summary>Replacing <code>magnifyingGlass</code> with <code><span><</span>Input.Affix<span>/></span></code> or <code><span><</span>Search<span>/></span></code> example:</summary>
+
+  - Before:
+  ```jsx
+  <Input magnifyingGlass />
+  ```
+
+  - After with `<Input.IconAffix>`:
+  ```jsx
+  <Input suffix={
+    <Input.IconAffix>
+      <Icons.Search />
+    </Input.IconAffix>
+  } />
+  ```
+
+  - After with `<Search>`:
+  ```jsx
+  <Search />
   ```
 </details>
 
@@ -498,7 +521,7 @@ This component was deleted, use `<FormField/>` instead.
 <details>
   <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <InputAreaWithLabelComposite>
     <Component />
@@ -561,7 +584,7 @@ This component was deleted, use `<FormField/>` instead.
 <details>
   <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <MultiSelectComposite>
     <Component />
@@ -727,7 +750,7 @@ Testkit:
 <details>
   <summary>Using removed <code>type</code> prop with value <code>button</code> example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <RadioGroup type="button" />
   ```
@@ -786,7 +809,7 @@ Props:
 <details>
   <summary>Using <code>items</code> prop example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <StatisticsWidget statistics=[...]/>
   ```
@@ -1056,7 +1079,7 @@ This component was deleted, use `<TextButton as="a"/>` instead.
 <details>
   <summary>Using <code><span><</span>TextButton<span>/></span></code> component example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <TextLink>Hello!</TextLink>
   ```
@@ -1085,7 +1108,7 @@ Props:
 <details>
   <summary>Using <code>primaryAction.skin</code> prop example:</summary>
 
-  Before:
+  - Before:
   ```jsx
   <TableActionCell
     primaryAction={{
