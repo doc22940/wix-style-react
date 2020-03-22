@@ -110,8 +110,6 @@ import { InputAreaDriver } from '../src/InputArea/InputArea.driver';
 export const inputAreaTestkitFactory: VanillaTestkitFactory<InputAreaDriver<HTMLElement>>;
 import { InputWithOptionsDriver } from '../src/InputWithOptions/InputWithOptions.driver';
 export const inputWithOptionsTestkitFactory: VanillaTestkitFactory<InputWithOptionsDriver>;
-import { LabelDriver } from '../src/Label/Label.driver';
-export const labelTestkitFactory: VanillaTestkitFactory<LabelDriver>;
 import { LinearProgressBarDriver } from '../src/LinearProgressBar/LinearProgressBar.driver';
 export const linearProgressBarTestkitFactory: VanillaTestkitFactory<LinearProgressBarDriver>;
 import { ListItemActionUniDriver } from '../src/ListItemAction/ListItemAction.uni.driver';

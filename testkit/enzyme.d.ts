@@ -111,8 +111,6 @@ import {InputAreaDriver} from '../src/InputArea/InputArea.driver';
 export const inputAreaTestkitFactory: EnzymeTestkitFactory<InputAreaDriver<ReactWrapper>>;
 import {InputWithOptionsDriver} from '../src/InputWithOptions/InputWithOptions.driver';
 export const inputWithOptionsTestkitFactory: EnzymeTestkitFactory<InputWithOptionsDriver>;
-import {LabelDriver} from '../src/Label/Label.driver';
-export const labelTestkitFactory: EnzymeTestkitFactory<LabelDriver>;
 import {LinearProgressBarDriver} from '../src/LinearProgressBar/LinearProgressBar.driver';
 export const linearProgressBarTestkitFactory: EnzymeTestkitFactory<LinearProgressBarDriver>;
 import {ListItemActionUniDriver} from '../src/ListItemAction/ListItemAction.uni.driver';

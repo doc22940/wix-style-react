@@ -161,9 +161,6 @@
   "InputWithOptions": {
     "path": "src/InputWithOptions"
   },
-  "Label": {
-    "path": "src/Label"
-  },
   "Layout": {
     "path": "src/Layout",
     "missingFiles": [

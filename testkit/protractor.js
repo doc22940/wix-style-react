@@ -82,7 +82,6 @@ export const imageViewerTestkitFactory = protractorUniTestkitFactoryCreator(load
 export const inputTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Input/Input.protractor.driver')));
 export const inputAreaTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/InputArea/InputArea.protractor.driver')));
 export const inputWithOptionsTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/InputWithOptions/InputWithOptions.protractor.driver')));
-export const labelTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Label/Label.protractor.driver')));
 export const linearProgressBarTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/LinearProgressBar/LinearProgressBar.protractor.driver')));
 export const ListItemActionTestkitFactory = protractorUniTestkitFactoryCreator(load(require('../src/ListItemAction/ListItemAction.uni.driver')));
 export const loaderTestkitFactory = protractorTestkitFactoryCreator(load(require('../src/Loader/Loader.protractor.driver')));

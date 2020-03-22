@@ -75,7 +75,6 @@ export const imageViewerTestkitFactory = testkitFactoryCreator(load(require('../
 export const inputTestkitFactory = testkitFactoryCreator(load(require('../src/Input/Input.driver')));
 export const inputAreaTestkitFactory = testkitFactoryCreator(load(require('../src/InputArea/InputArea.driver')));
 export const inputWithOptionsTestkitFactory = testkitFactoryCreator(load(require('../src/InputWithOptions/InputWithOptions.driver')));
-export const labelTestkitFactory = testkitFactoryCreator(load(require('../src/Label/Label.driver')));
 export const linearProgressBarTestkitFactory = testkitFactoryCreator(load(require('../src/LinearProgressBar/LinearProgressBar.driver')));
 export const listItemActionTestkitFactory = uniTestkitFactoryCreator(load(require('../src/ListItemAction/ListItemAction.uni.driver')));
 export const loaderTestkitFactory = testkitFactoryCreator(load(require('../src/Loader/Loader.driver')));

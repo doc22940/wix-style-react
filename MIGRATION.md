@@ -125,6 +125,7 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [\<InputArea/>](#inputarea)
   - [\<InputAreaWithLabelComposite/>](#inputareawithlabelcomposite)
   - [\<InputWithOptions/>](#inputwithoptions)
+  - [\<Label/>](#label)
   - [\<LinearProgressBar/>](#linearprogressbar)
   - [\<Loader/>](#loader)
   - [\<MultiSelect/>](#multiselect)
@@ -544,6 +545,10 @@ Props:
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `disableClickOutsideWhenClosed`, this functionality is now permanent <br/>
   Just remove this prop, no other change required.
+
+## \<Label/>
+
+This component was deleted, use native label instead.
 
 ## \<LinearProgressBar/>
 

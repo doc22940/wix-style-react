@@ -75,7 +75,6 @@ export const imageViewerTestkitFactory = enzymeTestkitFactoryCreator(load(requir
 export const inputTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Input/Input.driver')));
 export const inputAreaTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/InputArea/InputArea.driver')));
 export const inputWithOptionsTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/InputWithOptions/InputWithOptions.driver')));
-export const labelTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Label/Label.driver')));
 export const linearProgressBarTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/LinearProgressBar/LinearProgressBar.driver')));
 export const listItemActionTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/ListItemAction/ListItemAction.uni.driver')));
 export const loaderTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Loader/Loader.driver')));

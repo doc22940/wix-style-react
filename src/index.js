@@ -45,7 +45,6 @@ export { default as Popover } from './Popover';
 export { default as DropdownLayout } from './DropdownLayout';
 export { default as Dropdown } from './Dropdown';
 export { default as AutoComplete } from './AutoComplete';
-export { default as Label } from './Label';
 export { default as Table } from './Table';
 export { TableToolbar } from './TableToolbar';
 export { default as TableActionCell } from './TableActionCell';

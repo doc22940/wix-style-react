@@ -386,13 +386,6 @@ module.exports = {
     protractorLegacyTestkit: true,
   },
 
-  Label: {
-    vanillaLegacyTestkit: true,
-    enzymeLegacyTestkit: true,
-    protractorLegacyTestkit: true,
-    noPuppeteerTestkit: true,
-  },
-
   Highlighter: {
     vanillaLegacyTestkit: true,
     enzymeLegacyTestkit: true,

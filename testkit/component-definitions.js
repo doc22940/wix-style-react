@@ -638,13 +638,6 @@ export default {
     },
   },
 
-  Label: {
-    props: {
-      size: 'medium',
-      children: 'label',
-    },
-  },
-
   TableActionCell: {
     props: {
       primaryAction: {

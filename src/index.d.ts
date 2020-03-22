@@ -181,9 +181,6 @@ export * from './InputWithLabel';
 export { default as InputWithOptions } from './InputWithOptions';
 export * from './InputWithOptions';
 
-export { default as Label } from './Label';
-export * from './Label';
-
 export { default as LabelledElement } from './LabelledElement';
 export * from './LabelledElement';
 

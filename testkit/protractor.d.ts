@@ -50,7 +50,6 @@ export const imageViewerTestkitFactory: any;
 export const inputTestkitFactory: any;
 export const inputAreaTestkitFactory: any;
 export const inputWithOptionsTestkitFactory: any;
-export const labelTestkitFactory: any;
 export const linearProgressBarTestkitFactory: any;
 export const ListItemActionTestkitFactory: any;
 export const loaderTestkitFactory: any;

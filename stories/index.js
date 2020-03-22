@@ -73,7 +73,6 @@ require('../src/Input/docs/index.story');
 require('../src/InputArea/docs/index.story');
 require('../src/InputWithLabel/docs/index.story');
 require('../src/InputWithOptions/docs/index.story');
-require('../src/Label/docs/index.story');
 require('../src/LabelledElement/docs/index.story');
 require('../src/Layout/docs/index.story');
 require('../src/LinearProgressBar/docs/index.story');
