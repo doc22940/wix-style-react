@@ -165,7 +165,7 @@ Props:
 - removed `tooltipFixed` - use `tooltipProps` instead.
 - removed `tooltipFlip` - use `tooltipProps` instead.
 
-_Note: `tooltipProps` are defiled in Tooltip component story page._
+_Note: `tooltipProps` are defined in Tooltip component story page._
 
 <details>
   <summary>Using <code>tooltipProps</code> prop example:</summary>
@@ -333,7 +333,7 @@ This component was deleted, use `<FormField/>` instead.
 Props:
 - removed `tooltipContent` - use `tooltipProps` instead
 
-_Note: `tooltipProps` are defiled in Tooltip component story page._
+_Note: `tooltipProps` are defined in Tooltip component story page._
 
 <details>
   <summary>Using <code>tooltipContent</code> prop example:</summary>
