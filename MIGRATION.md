@@ -14,37 +14,19 @@ Cherry-pick imports are no longer supported, instead you should use the named im
 + import { TextButton } from 'wix-style-react';
 ```
 
-In order to easily replace the mentioned import, run the following codemod:
-```jsx
-npx wix-ui-codemod wix-style-react/named-imports ./src
-```
-
-This codemode should be able to take care of these:
-```diff
-- import TextButton from 'wix-style-react/TextButton';
-- import TextButton from 'wix-style-react/dist/src/TextButton';
-- import TextButton from 'wix-style-react/TextButton';
-- import PopoverMenu, {PopoverMenuProps} from 'wix-style-react/beta/PopoverMenu';
-```
-But it will not handle namespace based imports and this should be handled manually:
-```
-import * as SomeIconButton from 'wix-style-react/IconButton';
-```
-
 ### Icons
 Icons import from `wix-style-react` is no longer supported. Instead you should import them from `wix-ui-icons-common`
 ```diff
 - import Add from 'wix-style-react/new-icons/Add';
 + import Add from 'wix-ui-icons-common/Add';
 ```
+
+### Codemods
 In order to easily replace the mentioned imports, run the following codemods which does it for you:
 ```jsx
+npx wix-ui-codemod wix-style-react/named-imports <path>
 npx wix-ui-codemod wix-style-react/icons-common <path>
-```
-
-### Testing after migration
-
-To double check that everything works well, just make sure to run yoshi build or any build tool like storybook to see if there are any errors thrown.
+``` 
 
 ## Next steps
 The next steps of migration will require you to remove the usage of obsolete components, and in other cases, adapt your usage to api changes.
