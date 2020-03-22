@@ -85,129 +85,6 @@ The library contained a lot of old code, including unsupported styles of the des
 - `<CircularProgressBar/>` - remove exeperimental dynamic loading, in favor of future improvements. also remove legacy driver methods.
 -` <DatePicker/>` - change `isOpen` to `initialOpen`
 - `<Input/>` - removed legacy sub component `<Input.Units/>` and the `magnifyingGlass` props
-# `wix-style-react` V8 Migration Guide
-
-* This guide will help you migrate from `wix-style-react` V7 to the new V8. It might require some changes from your side, but in order to make it as smooth as possible we have created this detailed migration guide.
-* For a high level overview of the changes, please check the [Release Notes](./RELEASE_NOTES_V8.md)
-
-## Suggested steps for the migration
-
-### Before you upgrade
-
-The best tip **before** upgrading to v8, is fixing all the **Deprecation Messages** that appear in v7 which you see in you console. It will allow a much easier migration with critical changes.
-
-Some examples:
-- Input's magnifyingGlass prop is deprecated and will be removed in the next major release, please use suffix property with '<Input suffix={<Input.Affix><Search /></Input.Affix>}/>'.
-- Using icons from "wix-style-react/new-icons" has been deprecated. Please install and use icons from "wix-ui-icons-common" package directly.
-
-### Order of migration
-This is the suggested flow as we see it
-
-1. Change the import statements of the named-imports and the the icons.
-1. Remove obsolete components, such as `AutoCompleteComposite`
-1. Change components with `upgrade` prop like `Tooltip` and `Page`.
-1. Change from `PopoverMenu` to the `PopoverMenu` which is stated as `beta` - it becomes the official `PopoverMenu` in wsr8.
-1. Change to status message for all input/selection family components by using `status` and `statusMessage` instead of `error` and `errorMessage`.
-1. Remove the `theme` prop of the input/selection family.
-1. Change the way you pass specific tooltip props to components using tooltip internally.
-1. Handle the reset of the various changes as mentioned below.
-
-### "File by File" vs. "Component by Component" strategies
-Basically it's up to you, whether to take a component and search it all around the project, or go file by file and go over the migration guide.
-
-It might be easier to go file-by-file as you can run your tests per file
-
-
-## Changes described by domain
-
-### Import Statements
-
-#### From cherry picking to named imports
-For better performance we introduced named imports which will allow yoshi or custom webpack to eliminate dead code in our components. [Read more about tree-shaking](https://webpack.js.org/guides/tree-shaking/)
-
-Cherry-pick imports are no longer supported, instead you should use the named imports.
-```diff
-- import TextButton from 'wix-style-react/TextButton';
-+ import { TextButton } from 'wix-style-react';
-```
-
-#### Separated icons library
-The icons import from `wix-style-react` is no longer supported. Instead you should import them from `wix-ui-icons-common`
-```diff
-- import Add from 'wix-style-react/new-icons/Add';
-+ import Add from 'wix-ui-icons-common/Add';
-```
-
-#### Automatic codemod changes
-In order to automatically replace the mentioned imports, simply run the following codemods:
-```bash
-npx wix-ui-codemod wix-style-react/named-imports <path-to-your-project>
-npx wix-ui-codemod wix-style-react/icons-common <path-to-your-project>
-```
-
-### Remove old and deprecated components
-1. The follwing components are removed due to the previous version of the `FormField` component. They were deprecated for a long time and will not be available anymore:
-- `<AutoCompleteComposite/>`
-- `<FieldWithSelectionComposite/>`
-- `<GoogleAddressInputWithLabel/>`
-- `<InputAreaWithLabelComposite/>`
-- `<MultiSelectComposite/>`
-
-2. The following components are removed due to a more up-to-date APIs
-- `<FullTextView/>`
-- `<HBox/>`, `<VBox/>`
-- `<StatsWidget/>`
-- `<TextLink/>`
-
-3. Remove `SideMenu` and `SideMenuDrill` in favor of the new up-to-date and easy to use `SideBar` component.
-
-4. Remove `<DataTable/>` - This component became _internal_ and should not be used directly - use `<Table/>` instead.
-
-### API Changes for big components
-- `<Page/>` - New API and removed old code for better performance, new API features and slickness.
-- `<PopoverMenu/>` - Change implementation to the previously "beta" `PopoverMenu`
-- `<Tooltip/>` - Change implemenation to the upgraded `Tooltip`
-
-#### Standardize components with tooltip props configuration
-Standartize the usage of internal tooltips - instead of passing specific props (e.g. `tooltipContent`), you should propagate the entire `tooltipProps`.
-- `<InputWithOptions/>` (and the entire dropdown family) - change default behavior to **not** call `clickOutside` when the drop down is closed.
-- `<Popover/>`  - change default behavior to **not** call `clickOutside` when popover is closed.
-- `<AddItem/>`
-- `<FillButton/>`
-- `<ImageViewer/>`
-
-#### Standardize input components message indications
- Change message indication to `status` and `statusMessage` instead of `error`, `errorMessage`, `help` & `helpMessage`.
- - `<ColorInput/>`
- - `<DatePicker/>`
- - `<Dropdown/>`
- - `<GoogleAddressInput/>`
- - `<ImageViewer/>`
- - `<Input/>`
- - `<InputArea/>`
- - `<InputWithOptions/>`
- - `<MultiSelect/>`
- - `<NoBorderInput/>`
- - `<NumberInput/>`
- - `<RichTextInputArea/>`
- - `<Search/>`
-
-#### Remove old skins and themes
-The library contained a lot of old code, including unsupported styles of the design system. Many components used a `theme` prop that is now removed
-- `<DropdownLayout/>`
-- `<GoogleAddressInput/>`
-- `<Input/>`
-- `<InputArea/>`
-- `<MultiSelect/>`
-- `<NoBorderInput/>`
-- `<NumberInput/>`
-- `<Search/>`
-
-#### More general changes
-- `<Avatar/>` - remove old and deprecated colors.
-- `<CircularProgressBar/>` - remove exeperimental dynamic loading, in favor of future improvements. also remove legacy driver methods.
--` <DatePicker/>` - change `isOpen` to `initialOpen`
-- `<Input/>` - removed legacy sub component `<Input.Units/>` and the `magnifyingGlass` props
 - `InputArea/>` - removed `onTooltipShow
 - `<LinearProgressBar/>` - remove exeperimental dynamic loading, in favor of future improvements. also remove legacy driver methods.
 - `<Loader/>` - remove exeperimental dynamic loading, in favor of future improvements.
@@ -216,14 +93,20 @@ The library contained a lot of old code, including unsupported styles of the des
 - `<Table/>` - remove `clickRowChecbox` - removed due to typo, use `clickRowCheckbox` instead
 - `<TableActionCell/>` - use new `Tooltip` component internally and rename the `primaryAction.theme` prop to `primaryAction.skin`
 - `<Tag/>` - wrap text by default.
-
-------------
+### Bigger Topics
+- `<InputWithOptions/>` (and the entire dropdown family) - change default behavior to not call `clickOutside` when popover is closed.
+- `<Popover/>`  - change default behavior to not call `clickOutside` when popover is closed.
+- `<Page/>` - remove `upgrade`, to better performance, new API features and slickness.
+- `<PopoverMenu/>` - Change implementation to the previously `beta PopoverMenu`
+- `<Tooltip/>` - Change implemenation to the upraded `Tooltip`
 
 Now when you are more familiar with the changes of the new version, you can use the detailed instructions for the different components, which are used in your codebase.
 
 ## Index
 <span style="color:#c30000">links don't work in Storybook - only in GitHub. sorry for the inconvenience.</span>
 
+- [Introduction](#introduction)
+- [Motivation](#motivation)
 - [Components](#components)
   - [\<AddItem/>](#additem)
   - [\<Avatar/>](#avatar)
@@ -276,6 +159,38 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [Icons](#icons)
   - [error --> status](#error--errormessage----status--statusmessage)
   - [help prop](#help-prop)
+
+# Introduction
+---
+
+We are happy to announce the 8th Major version of wix-style-react!
+This version includes a lot of changes so in order not to get messy follow these steps:
+
+1. < Moshe write what you did about the imports >
+2. < Moshe write what you did about the icons >
+3. Start migrating *next version components* (components with an upgrade prop).<br>
+   Can be done by removing upgrade prop.<br>
+   These are the next version components
+  - \<Page/>
+  - \<TableActionCell/>
+  - \<Tooltip/>
+4. Components using error and errorMessage - all inputs (number, color, dropdowns, etc.)
+5. Check out the [Index](#index) for a full list of components with breaking changes.
+
+# Motivation
+---
+
+We removed tons of code (over 22,000 lines), from unused components to deprecated props.<br>
+This major release introduces improvements in these categories:
+- Performance
+  - Replaced components with their *next version*
+  - Removed deprecated props
+  - Reduced bundle size!
+- Quality
+  - Deleted unused components
+  - Refined our Storybook documentation
+- Consistency
+  - Props alignment in related components - like status & statusMessage
 
 # Components
 ---
