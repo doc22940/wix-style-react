@@ -104,6 +104,11 @@ Testkit:
 Props:
 - removed `tooltipContent`
 
+#### `<FormField/>`
+
+Testkit:
+- (protractor) removed `getTooltipInfoValue`
+
 #### `<GoogleAddressInput/>`
 
 Props:

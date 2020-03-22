@@ -147,6 +147,7 @@ The library contained a lot of old code, including unsupported styles of the des
   - [\<DropdownLayout/>](#dropdownlayout)
   - [\<FieldWithSelectionComposite/>](#fieldwithselectioncomposite)
   - [\<FillButton/>](#fillbutton)
+  - [\<FormField/>](#formfield)
   - [\<FullTextView/>](#fulltextview)
   - [\<GoogleAddressInputWithLabel/>](#googleaddressinputwithlabel)
   - [\<GoogleAddressInput/>](#googleaddressinput)
@@ -419,6 +420,11 @@ _Note: `tooltipProps` are defined in Tooltip component story page._
   />
   ```
 </details>
+
+## \<FormField/>
+
+Testkit:
+- (protractor) removed `getTooltipInfoValue`.
 
 ## \<FullTextView/>
 
