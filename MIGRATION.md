@@ -585,7 +585,45 @@ Props:
 
 ## \<Label/>
 
-This component was deleted, use native label instead.
+This component was deleted.<br>
+Depends on your use case, you can use on of the following:
+- `<FormField/>`
+- `<Text tagName="label">`
+
+<details>
+  <summary>Using <code><span><</span>FormField<span>/></span></code> example:</summary>
+
+  - Before:
+  ```jsx
+  <Label size="medium">
+    Name:
+    <Input/>
+  </Label>
+  ```
+
+  - After:
+  ```jsx
+  <FormField label="Name:">
+    <Input/>
+  </FormField>
+  ```
+</details>
+
+<details>
+  <summary>Using <code><span><</span>Text tagName="label"<span>/></span></code> example:</summary>
+
+  - Before:
+  ```jsx
+  <Label size="medium" for="xxx">
+    Name:
+  </Label>
+  ```
+
+  - After:
+  ```jsx
+  <Text tagName="label" for="xxx">Name:</Text>
+  ```
+</details>
 
 ## \<LinearProgressBar/>
 
