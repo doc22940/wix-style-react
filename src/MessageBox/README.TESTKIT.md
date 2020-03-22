@@ -17,7 +17,7 @@
 | clickOnCancellationButton | - | - | clicks on the cancellation button |
 | clickOnConfirmationButton | - | - | clicks on the confirmation button |
 | clickOnHeaderCloseButton | - | - | clicks on the close button |
-| isThemeExist | (green, blue , red, purple) | bool | fulfilled if theme applied |
+| isThemeExist | (blue , red, purple) | bool | fulfilled if theme applied |
 | getFooter | - | element | returns the footer element |
 | getTitle | - | string | returns the  title of the Message Box |
 | getChildBySelector | selector | child element | return the element inside the Message box content |

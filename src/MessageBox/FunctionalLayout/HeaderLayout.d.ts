@@ -6,13 +6,7 @@ export interface HeaderLayoutProps {
   closeButton?: boolean;
   theme?: HeaderLayoutTheme;
 }
-export type HeaderLayoutTheme =
-  | 'red'
-  | 'green'
-  | 'blue'
-  | 'lightGreen'
-  | 'purple';
-
+export type HeaderLayoutTheme = 'red' | 'blue' | 'purple';
 
 declare const HeaderLayout: React.SFC<HeaderLayoutProps>;
 export default HeaderLayout;

@@ -37,8 +37,4 @@ export default class MessageBoxFunctionalLayout extends WixComponent<
   MessageBoxFunctionalLayoutProps
 > {}
 
-export type MessageBoxFunctionalLayoutTheme =
-  | 'red'
-  | 'blue'
-  | 'purple'
-  | 'green';
+export type MessageBoxFunctionalLayoutTheme = 'red' | 'blue' | 'purple';

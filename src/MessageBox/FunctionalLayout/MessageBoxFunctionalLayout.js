@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import throttle from 'lodash/throttle';
 
 import { generateDataAttr } from '../../utils/generateDataAttr';
-import deprecationLog from '../../utils/deprecationLog';
 import HeaderLayout from './HeaderLayout';
 import FooterLayout from './FooterLayout';
 import WixComponent from '../../BaseComponents/WixComponent';
@@ -89,7 +88,7 @@ class MessageBoxFunctionalLayout extends WixComponent {
   };
 
   render() {
-    let { theme } = this.props;
+    const { theme } = this.props;
     const {
       title,
       onCancel,
@@ -115,13 +114,6 @@ class MessageBoxFunctionalLayout extends WixComponent {
       sideActions,
       image,
     } = this.props;
-
-    if (theme === 'green') {
-      theme = undefined;
-      deprecationLog(
-        `MessageBoxFunctionalLayout component prop "theme" with the value "green" is deprecated.`,
-      );
-    }
 
     const contentClassName = classNames(styles.content, {
       [styles.fullscreenContent]: fullscreen,
@@ -191,7 +183,7 @@ MessageBoxFunctionalLayout.propTypes = {
   /** Add a suffix icon for the secondary action button */
   cancelSuffixIcon: PropTypes.element,
   /** modal theme color */
-  theme: PropTypes.oneOf(['red', 'blue', 'purple', 'green']),
+  theme: PropTypes.oneOf(['red', 'blue', 'purple']),
   /** Called when the main action (confirm) is clicked */
   onOk: PropTypes.func,
   /** Called when the secondary action (cancel) is clicked */

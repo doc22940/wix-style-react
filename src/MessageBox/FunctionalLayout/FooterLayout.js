@@ -7,7 +7,6 @@ import * as styles from './FooterLayout.scss';
 
 const buttonSkinByTheme = {
   blue: 'standard',
-  green: 'standard',
   purple: 'premium',
   red: 'destructive',
 };

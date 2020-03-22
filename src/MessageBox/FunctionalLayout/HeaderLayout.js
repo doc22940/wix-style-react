@@ -34,7 +34,7 @@ HeaderLayout.propTypes = {
   title: PropTypes.node,
   onCancel: PropTypes.func,
   closeButton: PropTypes.bool,
-  theme: PropTypes.oneOf(['red', 'green', 'blue', 'lightGreen', 'purple']),
+  theme: PropTypes.oneOf(['red', 'blue', 'purple']),
 };
 
 export default HeaderLayout;

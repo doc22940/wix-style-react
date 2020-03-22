@@ -202,10 +202,10 @@ describe('MessageBox', () => {
 
       it('should allowing setting the theme', async () => {
         const props = {
-          theme: 'green',
+          theme: 'red',
         };
         const driver = createDriver(<MessageBoxFunctionalLayout {...props} />);
-        expect(await driver.isThemeExist('green')).toBe(true);
+        expect(await driver.isThemeExist('red')).toBe(true);
         expect(await driver.isThemeExist('blue')).toBe(false);
         expect(await driver.isThemeExist('purple')).toBe(false);
       });

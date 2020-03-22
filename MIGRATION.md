@@ -128,6 +128,7 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [\<Label/>](#label)
   - [\<LinearProgressBar/>](#linearprogressbar)
   - [\<Loader/>](#loader)
+  - [\<MessageBoxFunctionalLayout/>](#messageboxfunctionallayout)
   - [\<MultiSelect/>](#multiselect)
   - [\<MultiSelectComposite/>](#multiselectcomposite)
   - [\<NoBorderInput/>](#noborderinput)
@@ -566,6 +567,11 @@ Testkit:
 Props:
 - removed `shouldLoadAsync` - we decided to remove this feature.<br>
   Just remove this prop, no other change required.
+
+## \<MessageBoxFunctionalLayout/>
+
+Props:
+- removed value `green` in prop `theme` - will fall back to `blue`.
 
 ## \<MultiSelect/>
 
