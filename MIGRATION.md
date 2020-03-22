@@ -104,6 +104,9 @@ Now when you are more familiar with the changes of the new version, you can use 
 
 ## Index
 <span style="color:#c30000">links don't work in Storybook - only in GitHub. sorry for the inconvenience.</span>
+
+- [Introduction](#introduction)
+- [Motivation](#motivation)
 - [Components](#components)
   - [\<AddItem/>](#additem)
   - [\<Avatar/>](#avatar)
@@ -156,6 +159,38 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [Icons](#icons)
   - [error --> status](#error--errormessage----status--statusmessage)
   - [help prop](#help-prop)
+
+# Introduction
+---
+
+We are happy to announce the 8th Major version of wix-style-react!
+This version includes a lot of changes so in order not to get messy follow these steps:
+
+1. < Moshe write what you did about the imports >
+2. < Moshe write what you did about the icons >
+3. Start migrating *next version components* (components with an upgrade prop).<br>
+   Can be done by removing upgrade prop.<br>
+   These are the next version components
+  - \<Page/>
+  - \<TableActionCell/>
+  - \<Tooltip/>
+4. Components using error and errorMessage - all inputs (number, color, dropdowns, etc.)
+5. Check out the [Index](#index) for a full list of components with breaking changes.
+
+# Motivation
+---
+
+We removed tons of code (over 22,000 lines), from unused components to deprecated props.<br>
+This major release introduces improvements in these categories:
+- Performance
+  - Replaced components with their *next version*
+  - Removed deprecated props
+  - Reduced bundle size!
+- Quality
+  - Deleted unused components
+  - Refined our Storybook documentation
+- Consistency
+  - Props alignment in related components - like status & statusMessage
 
 # Components
 ---
