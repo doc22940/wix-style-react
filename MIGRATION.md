@@ -135,10 +135,10 @@ Now when you are more familiar with the changes of the new version, you can use 
   - [\<Popover/>](#popover)
   - [\<PopoverMenu/>](#popovermenu)
   - [\<RadioGroup/>](#radiogroup)
-  - [\<RichTextInputArea/>](#sidemenu)
+  - [\<RichTextInputArea/>](#richtextinputarea)
   - [\<Search/>](#search)
-  - [\<SideMenu/>](#sidemenudrill)
-  - [\<SideMenuDrill/>](#richtextinputarea)
+  - [\<SideMenu/>](#sidemenu)
+  - [\<SideMenuDrill/>](#sidemenudrill)
   - [\<StatisticsWidget/>](#statisticswidget)
   - [\<StatsWidget/>](#statswidget)
   - [\<TextLink/>](#textlink)
@@ -301,7 +301,7 @@ Props:
 ## \<DropdownLayout/>
 
 Props:
-- removed `theme`
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 
 Testkit:
 - removed `hasTheme`
@@ -382,7 +382,7 @@ This component was deleted, use `<FormField/>` instead.
 ## \<GoogleAddressInput/>
 
 Props:
-- removed `theme`
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -436,7 +436,7 @@ Props:
   For more information and examples go to [help prop](#help-prop) section.
 - removed sub component `<Input.Units/>` use `<Input.Affix/>` component instead
 - removed `magnifyingGlass` use `<Input.Affix/>` or `<Search/>` component instead. (see example below)
-- removed `theme`
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 
 Testkit:
 - removed `hasHelp`
@@ -494,7 +494,7 @@ Testkit:
 
 Props:
 - removed `onTooltipShow`.
-- removed `theme`.
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -564,7 +564,7 @@ Props:
 ## \<MultiSelect/>
 
 Props:
-- removed `theme`.
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -602,7 +602,7 @@ This component was deleted, use `<FormField/>` instead.
 ## \<NoBorderInput/>
 
 Props:
-- removed `theme`.
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -617,7 +617,7 @@ Testkit:
 ## \<NumberInput/>
 
 Props:
-- removed `theme`.
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -780,7 +780,7 @@ Testkit:
 ## \<Search/>
 
 Props:
-- removed `theme`.
+- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -1245,10 +1245,28 @@ export default () => (
 
 ## error & errorMessage --> status & statusMessage
 
+Relevant for components:
+- [\<ColorInput/>](#colorinput)
+- [\<DatePicker/>](#datepicker)
+- [\<Dropdown/>](#dropdown)
+- [\<GoogleAddressInput/>](#googleaddressinput)
+- [\<ImageViewer/>](#imageviewer)
+- [\<Input/>](#input)
+- [\<InputArea/>](#inputarea)
+- [\<InputWithOptions/>](#inputwithoptions)
+- [\<MultiSelect/>](#multiselect)
+- [\<NoBorderInput/>](#noborderinput)
+- [\<NumberInput/>](#numberinput)
+- [\<RichTextInputArea/>](#sidemenu)
+- [\<Search/>](#search)
+
+
 Props:
-- changed `error` to `status`
-- changed `errorMessage` to `statusMessage`
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
+- removed `error` & `errorMessage`
+- added `status` & `statusMessage`
+
+The prop `status` has more options than the regular error.<br>
+It can be on of `error`, `warning`, or `loading`, each have it's own style and icon.
 
 Testkit:
 - added `hasStatus`
@@ -1261,17 +1279,48 @@ Testkit:
 - removed `isErrorVisible` - use `hasStatus` instead
 - removed `getErrorTooltipContent` - use `getStatusMessage` instead
 
-Before:
+<details>
+  <summary>Using <code>status</code> prop example:</summary>
 
-```jsx
-<NumberInput error errorMessage="Error!" />
-```
+  - Before:
+  ```jsx
+  <NumberInput error errorMessage="Error!" />
+  ```
 
-After:
+  - After:
+  ```jsx
+  <NumberInput status="error" statusMessage="Error!" />
+  ```
+</details>
 
-```jsx
-<NumberInput status="error" statusMessage="Error!" />
-```
+<details>
+  <summary>Testkit example, using <code>hasStatus</code> & <code>getStatus</code>:</summary>
+
+  - Before:
+  ```jsx
+  it('should have an error state', async () => {
+    const errorMessage = 'Error!';
+    const { driver } = render(<Input error errorMessage={errorMessage} />);
+
+    expect(await driver.hasError()).toBe(true);
+    expect(await driver.getStatusMessage()).toBe(errorMessage);
+  });
+  ```
+
+  - After:
+  ```jsx
+  it('should have an error state', async () => {
+    const statusMessage = 'Error!';
+    const { driver } = render(<Input status="error" statusMessage={statusMessage} />);
+
+    expect(await driver.hasStatus()).toBe(true);
+    expect(await driver.getStatus()).toBe('error');
+    expect(await driver.getErrorTooltipContent()).toBe(errorMessage);
+  });
+  ```
+</details>
+
+
 
 ## help prop
 
