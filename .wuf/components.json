@@ -472,5 +472,8 @@
   },
   "AnnouncementModalLayout": {
     "path": "src/AnnouncementModalLayout"
+  },
+  "Pagination": {
+    "path": "src/Pagination"
   }
 }

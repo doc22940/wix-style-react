@@ -193,3 +193,6 @@ require('../src/MessageBox/docs');
 require('./FieldWithSelectionComposite');
 require('../src/Deprecated/SideMenu/docs');
 require('../src/Deprecated/SideMenu/docs/SideMenu');
+
+// TODO: move to correct position
+require('../src/Pagination/docs/index.story');

@@ -1,0 +1,22 @@
+:import {
+  -st-from: "../Foundation/stylable/colors.st.css";
+  -st-named: G30,R30;
+}
+
+.root {
+  -st-states: odd, even;
+  text-align: center;
+}
+
+.root:even .number {
+  background: value(G30);
+}
+
+.root:odd .number {
+  background: value(R30);
+}
+
+.button {
+  display: flex;
+  justify-content: space-evenly;
+}

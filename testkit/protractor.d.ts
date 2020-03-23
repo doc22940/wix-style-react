@@ -132,6 +132,7 @@ export const customModalLayoutTestkitFactory: any;
 export const statusIndicatorTestkitFactory: any;
 export const messageModalLayoutTestkitFactory: any;
 export const announcementModalLayoutTestkitFactory: any;
+export const paginationTestkitFactory: any;
 export const drillViewTestkitFactory: any;
 export const cardHeaderTestkitFactory: any;
 export const sideMenuTestkitFactory: any;

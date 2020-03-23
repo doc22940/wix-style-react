@@ -429,6 +429,10 @@ export * from './beta/PopoverMenu';
 export {default as TextLink} from './TextLink';
 
 export { default as AnnouncementModalLayout } from './AnnouncementModalLayout';
+
+export { default as Pagination } from './Pagination';
+export * from './Pagination'
+
 export * from './AnnouncementModalLayout'
 
 export * from './TextLink';

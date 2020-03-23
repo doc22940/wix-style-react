@@ -138,6 +138,7 @@ const javascriptFiles = [
   ['BaseModalLayout.bundle.min.js', 20],
   ['MessageModalLayout.bundle.min.js', 20],
   ['AnnouncementModalLayout.bundle.min.js', 18],
+  ['Pagination.bundle.min.js', 10],
 ];
 
 const cssFiles = [
@@ -236,6 +237,7 @@ const cssFiles = [
   ['SidePanel.min.css', 2],
   ['FontUpgrade.min.css', 1],
   ['StatusIndicator.min.css', 1],
+  ['Pagination.min.css', 1],
 ];
 
 const getJS = () =>

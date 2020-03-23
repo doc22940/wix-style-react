@@ -251,6 +251,8 @@ import {MessageModalLayoutUniDriver} from '../src/MessageModalLayout/MessageModa
 export const messageModalLayoutTestkitFactory: PuppeteerUniTestkitFactory<MessageModalLayoutUniDriver>;
 import {AnnouncementModalLayoutUniDriver} from '../src/AnnouncementModalLayout/AnnouncementModalLayout.uni.driver';
 export const announcementModalLayoutTestkitFactory: PuppeteerUniTestkitFactory<AnnouncementModalLayoutUniDriver>;
+import {PaginationUniDriver} from '../src/Pagination/Pagination.uni.driver';
+export const paginationTestkitFactory: PuppeteerUniTestkitFactory<PaginationUniDriver>;
 import {HeaderUniDriver} from '../src/Card/Header/Header.uni.driver';
 export const cardHeaderTestkitFactory: PuppeteerUniTestkitFactory<HeaderUniDriver>;
 import {EditableRowUniDriver} from '../src/EditableSelector/EditableRow/EditableRow.uni.driver';

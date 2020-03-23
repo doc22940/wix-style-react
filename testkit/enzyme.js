@@ -170,6 +170,7 @@ export const customModalLayoutTestkitFactory = enzymeUniTestkitFactoryCreator(lo
 export const statusIndicatorTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/StatusIndicator/StatusIndicator.uni.driver')));
 export const messageModalLayoutTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/MessageModalLayout/MessageModalLayout.uni.driver')));
 export const announcementModalLayoutTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/AnnouncementModalLayout/AnnouncementModalLayout.uni.driver')));
+export const paginationTestkitFactory = enzymeUniTestkitFactoryCreator(load(require('../src/Pagination/Pagination.uni.driver')));
 export const sideMenuDrillTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Deprecated/SideMenu/DrillView/DrillView.driver')));
 export const headerTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Card/Header/Header.driver')));
 export const sideMenuTestkitFactory = enzymeTestkitFactoryCreator(load(require('../src/Deprecated/SideMenu/core/SideMenu.driver')));

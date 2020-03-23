@@ -155,6 +155,7 @@ export const customModalLayoutTestkitFactory = puppeteerUniTestkitFactoryCreator
 export const statusIndicatorTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/StatusIndicator/StatusIndicator.uni.driver')));
 export const messageModalLayoutTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/MessageModalLayout/MessageModalLayout.uni.driver')));
 export const announcementModalLayoutTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/AnnouncementModalLayout/AnnouncementModalLayout.uni.driver')));
+export const paginationTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/Pagination/Pagination.uni.driver')));
 export const drillViewTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/Deprecated/SideMenu/DrillView/DrillView.uni.driver')));
 export const cardHeaderTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/Card/Header/Header.uni.driver')));
 export const sideMenuTestkitFactory = puppeteerUniTestkitFactoryCreator(load(require('../src/Deprecated/SideMenu/core/SideMenu.uni.driver')));
