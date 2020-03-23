@@ -6,15 +6,13 @@ import { Animator } from 'wix-animations';
 import classNames from 'classnames';
 import defaultTo from 'lodash/defaultTo';
 import { VariableSizeList as List } from 'react-window';
-import { PopoverCommonProps } from '../commonProps';
+import { PopoverCommonProps } from '../../commonProps';
 
 import styles from './DataTable.scss';
 import InfiniteScroll from '../../utils/InfiniteScroll';
-import Tooltip from '../../Tooltip';
 import InfoIcon from '../../InfoIcon';
 
 import { virtualRowsAreEqual } from './DataTable.utils';
-import { isMadefor } from '../../FontUpgrade/utils';
 
 export const DataTableHeader = props => {
   const { dataHook } = props;
