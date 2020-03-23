@@ -2,10 +2,6 @@ import * as React from 'react';
 
 export interface StatisticsWidgetProps {
   dataHook?: string;
-  /** The old name of the items props. Will be removed in future.
-   * @deprecated
-   * */
-  statistics?: StatisticsWidgetItem[];
   items?: StatisticsWidgetItem[];
 }
 
