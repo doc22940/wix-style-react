@@ -1322,6 +1322,60 @@ The following props were changed/removed and require you to modify your code acc
 - `fixed` - whether to enable the fixed behaviour. This behaviour is used to keep the Tooltip at it's original placement even when it's being positioned outside the boundary.
 - `flip` - whether to enable the flip behaviour. This behaviour is used to flip the Tooltips placement when it starts to overlap the target element.
 
+### Deprecated theme=`white`
+
+Tooltip no longer supports theme white, but white skin is available on Popover which is a building block for current Tooltip.
+
+> Warning #1: Adding any action based element into the hoverable content is considered inaccesible. Only textual representation is recommended.
+
+> Warning #2: White Tooltip should be used only in cases when app background is dark - all other cases should have dark Tooltip.
+
+
+Here is an example of same functionality as Tooltip but with white skin using Popover:
+```jsx
+class WhiteTooltip extends React.PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      shown: false,
+    };
+  }
+
+  open() {
+    this.setState({ shown: true });
+  }
+
+  close() {
+    this.setState({ shown: false });
+  }
+
+  render() {
+    const { shown } = this.state;
+    const { children, content, textAlign, ...rest } = this.props;
+
+    return (
+      <Popover
+        appendTo="window"
+        {...rest}
+        shown={shown}
+        onMouseEnter={this.open}
+        onMouseLeave={this.close}
+        showArrow
+        animate
+      >
+        <Popover.Element>{children}</Popover.Element>
+        <Popover.Content>
+          <div style={{ textAlign }}>{content}</div>
+        </Popover.Content>
+      </Popover>
+    );
+  }
+}
+
+export default WhiteTooltip;
+```
+
 ### Testkit
 Testkit was rewritten and is now async, which means you should `await` for every method invocation.
 You should change the import path accordingly:
