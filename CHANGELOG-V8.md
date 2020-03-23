@@ -31,6 +31,7 @@ For changelog of version 7 [see here](CHANGELOG-V7.md)
 - `<MultiSelectComposite/>`
 - `<SideMenu/>`
 - `<SideMenuDrill/>`
+- `<SlideAnimation/>`
 - `<StatsWidget/>`
 - `<TextLink/>`
 - `<VBox/>`

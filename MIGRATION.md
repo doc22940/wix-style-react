@@ -71,7 +71,7 @@ npx wix-ui-codemod wix-style-react/icons-common <path-to-your-project>
 - `<StatsWidget/>`
 - `<TextLink/>`
 
-3. Remove `SideMenu` `SideMenuDrill` in favor of the new up-to-date and easy to use `SideBar` component:
+3. Remove `SideMenu`, `SideMenuDrill`, and `SlideAnimation` in favor of the new up-to-date and easy to use `SideBar` component:
 
 4. Remove `<DataTable/>` - This component became _internal_ and should not be used directly - use `<Table/>` instead.
 
@@ -173,6 +173,7 @@ The library contained a lot of old code, including unsupported styles of the des
   - [\<Search/>](#search)
   - [\<SideMenu/>](#sidemenu)
   - [\<SideMenuDrill/>](#sidemenudrill)
+  - [\<SlideAnimation/>](#slideanimation)
   - [\<StatisticsWidget/>](#statisticswidget)
   - [\<StatsWidget/>](#statswidget)
   - [\<TextLink/>](#textlink)
@@ -912,6 +913,10 @@ For more information visit [\<Sidebar/>'s storybook page](https://wix-style-reac
 
 ## \<SideMenuDrill/>
 This component was deleted, use `<Sidebar/>` instead.
+For more information visit [\<Sidebar/>'s storybook page](https://wix-style-react.now.sh/?path=/story/components-api-components--sidebar).
+
+## \<SlideAnimation/>
+This component was part of `<SideMenu/>` and was deleted, use `<Sidebar/>` instead.
 For more information visit [\<Sidebar/>'s storybook page](https://wix-style-react.now.sh/?path=/story/components-api-components--sidebar).
 
 ## \<StatisticsWidget/>
