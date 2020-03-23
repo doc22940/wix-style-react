@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import '../../colors.scss';
 
 .table {
   border-collapse: collapse;
@@ -8,7 +8,7 @@
 .table th, .table td {
   border: 1px solid black;
   padding: 5px;
-
+-a
   &.light {
     background-color: $D10;
   }
