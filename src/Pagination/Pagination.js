@@ -1,46 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Pagination as CorePagination } from 'wix-ui-core/dist/src/components/pagination';
+import { withFocusable } from 'wix-ui-core/dist/src/hocs/Focusable/FocusableHOC';
+import ChevronLeft from 'wix-ui-icons-common/ChevronLeft';
+import ChevronRight from 'wix-ui-icons-common/ChevronRight';
 
-import Text from '../Text';
-import Button from '../Button';
-import styles from './Pagination.st.css';
-import { dataHooks } from './constants';
+import style from './Pagination.st.css';
 
 /** Component for pagination */
 class Pagination extends React.PureComponent {
-  state = {
-    count: 0,
-  };
-
-  _handleClick = () => {
-    this.setState(({ count }) => ({
-      count: count + 1,
-    }));
-  };
-
   render() {
-    const { count } = this.state;
-    const { dataHook, buttonText } = this.props;
-    const isEven = count % 2 === 0;
-
+    const { dataHook, ...rest } = this.props;
     return (
       <div
-        {...styles('root', { even: isEven, odd: !isEven }, this.props)}
-        data-hook={dataHook}
+        onFocus={this.props.focusableOnFocus}
+        onBlur={this.props.focusableOnBlur}
+        {...style('root', {}, rest)}
       >
-        <Text dataHook={dataHooks.paginationCount}>
-          You clicked this button {isEven ? 'even' : 'odd'} number (
-          <span className={styles.number}>{count}</span>) of times
-        </Text>
-
-        <div className={styles.button}>
-          <Button
-            onClick={this._handleClick}
-            dataHook={dataHooks.paginationButton}
-          >
-            {buttonText}
-          </Button>
-        </div>
+        <CorePagination
+          data-hook={dataHook}
+          {...rest}
+          {...style('pagination', {}, rest)}
+        />
       </div>
     );
   }
@@ -51,14 +32,21 @@ Pagination.displayName = 'Pagination';
 Pagination.propTypes = {
   /** Applied as data-hook HTML attribute that can be used in the tests */
   dataHook: PropTypes.string,
-
-  /** A css class to be applied to the component's root element */
-  className: PropTypes.string,
-
-  /** Text for the button */
-  buttonText: PropTypes.string,
+  /** RTL mode */
+  rtl: PropTypes.bool,
 };
 
-Pagination.defaultProps = {};
+Pagination.defaultProps = {
+  showFirstPage: true,
+  showLastPage: true,
+  responsive: false,
+  showFirstLastNavButtons: false,
+  paginationMode: 'pages',
+  showInputModeTotalPages: false,
+  disabled: false,
+  previousLabel: <ChevronLeft />,
+  nextLabel: <ChevronRight />,
+  rtl: false,
+};
 
-export default Pagination;
+export default withFocusable(Pagination);

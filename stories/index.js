@@ -100,6 +100,7 @@ require('../src/NumberInput/docs/index.story');
 require('../src/Page/docs/PageExampleStories');
 require('../src/Page/docs/index.story');
 require('../src/PageHeader/docs/index.story');
+require('../src/Pagination/docs/index.story');
 require('../src/Popover/docs/index.story');
 require('../src/PopoverMenu/docs/index.story');
 require('../src/PreviewWidget/docs/index.story');
@@ -193,6 +194,3 @@ require('../src/MessageBox/docs');
 require('./FieldWithSelectionComposite');
 require('../src/Deprecated/SideMenu/docs');
 require('../src/Deprecated/SideMenu/docs/SideMenu');
-
-// TODO: move to correct position
-require('../src/Pagination/docs/index.story');
