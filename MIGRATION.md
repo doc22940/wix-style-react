@@ -139,6 +139,7 @@ The library contained a lot of old code, including unsupported styles of the des
   - [\<Avatar/>](#avatar)
   - [\<AutoCompleteComposite/>](#autocompletecomposite)
   - [\<Badge/>](#badge)
+  - [\<BarChart/>](#barchart)
   - [\<CircularProgressBar/>](#circularprogressbar)
   - [\<ColorInput/>](#colorinput)
   - [\<DataTable/>](#datatable)
@@ -306,6 +307,12 @@ Testkit:
   });
   ```
 </details>
+
+## \<BarChart/>
+
+Props:
+- removed `deprecatedColors`.
+  Just remove this prop, no other change required.
 
 ## \<CircularProgressBar/>
 

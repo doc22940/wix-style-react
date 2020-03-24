@@ -16,16 +16,6 @@ const tests = [
         },
       },
       {
-        it: 'deprecated colors',
-        props: {
-          items: [1, 2, 3, 4, 5, 6, 7, 8, 9].map(n => ({
-            value: 250,
-            description: `Option ${n}`,
-          })),
-          deprecatedColors: true,
-        },
-      },
-      {
         it: '3 items',
         props: {
           items: [

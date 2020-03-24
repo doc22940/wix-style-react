@@ -42,11 +42,6 @@ class BarChart extends React.PureComponent {
 
     /** Callback called every time when descriptionInfo tooltip is shown*/
     onDescriptionInfoShown: PropTypes.func,
-
-    /** Use old color scheme
-     * @deprecated
-     */
-    deprecatedColors: PropTypes.bool,
   };
 
   MIN_BAR_WIDTH = 50;
@@ -101,7 +96,7 @@ class BarChart extends React.PureComponent {
     key,
   ) => {
     const { width } = this.state;
-    const { total, deprecatedColors } = this.props;
+    const { total } = this.props;
     const calculatedTotal = this._getCalculatedTotal();
     const coefficient = total ? calculatedTotal / total : 1;
     const showText =
@@ -110,7 +105,7 @@ class BarChart extends React.PureComponent {
 
     return (
       <div
-        {...styles('item', { deprecatedColors }, this.props)}
+        {...styles('item', {}, this.props)}
         key={key}
         data-hook={dataHooks.bar}
         style={{

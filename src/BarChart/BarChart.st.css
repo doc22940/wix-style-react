@@ -1,11 +1,6 @@
 :import {
   -st-from: "../Foundation/stylable/colors.st.css";
-  -st-named: B40, B05, D30, G05, Y10, R00;
-}
-
-:import {
-  -st-from: "../Foundation/stylable/colors.st.css";
-  -st-named: A1, A2, A3, A4, A5, A6;
+  -st-named: B40, A1, A2, A3, A4, A5, A6;
 }
 
 
@@ -25,7 +20,6 @@
 }
 
 .item {
-  -st-states: deprecatedColors(boolean);
   min-width: 30px;
   flex-grow: var(--barValue);
   flex-basis: calc(var(--barValue) * 1px);
@@ -67,30 +61,6 @@
 
 .item:nth-child(6n) .value {
   background-color: value(A6);
-}
-
-.item:deprecatedColors:nth-child(6n-5) .value {
-  background-color: value(B05);
-}
-
-.item:deprecatedColors:nth-child(6n-4) .value {
-  background-color: #20455e;
-}
-
-.item:deprecatedColors:nth-child(6n-3) .value {
-  background-color: value(D30);
-}
-
-.item:deprecatedColors:nth-child(6n-2) .value {
-  background-color: value(G05);
-}
-
-.item:deprecatedColors:nth-child(6n-1) .value {
-  background-color: value(Y10);
-}
-
-.item:deprecatedColors:nth-child(6n) .value {
-  background-color: value(R00);
 }
 
 .item:hover .value {

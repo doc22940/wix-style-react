@@ -13,7 +13,6 @@ export interface BarChartProps {
   items: BarChartItem[];
   total?: number;
   dataHook?: string;
-  deprecatedColors?: boolean;
   onDescriptionInfoShown?: () => void;
 }
 

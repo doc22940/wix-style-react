@@ -51,6 +51,11 @@ Props:
 Props:
 - changed `color` - only values
 
+#### `<BarChart/>`
+
+Props:
+- removed `deprecatedColors`
+
 #### `<CircularProgressBar/>`
 
 Props:
