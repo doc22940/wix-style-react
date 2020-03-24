@@ -7,6 +7,7 @@ import InfiniteScroll from '../utils/InfiniteScroll';
 import scrollIntoView from '../utils/scrollIntoView';
 import * as DataAttr from './DataAttr';
 import styles from './DropdownLayout.scss';
+import deprecationLog from '../utils/deprecationLog';
 
 const modulu = (n, m) => {
   const remain = n % m;
@@ -31,6 +32,12 @@ class DropdownLayout extends WixComponent {
       hovered: NOT_HOVERED_INDEX,
       selectedId: props.selectedId,
     };
+
+    if (props.hasOwnProperty('theme')) {
+      deprecationLog(
+        '<DropdownLayout/> - theme props is deprecated, please contact us or your UX if needed.',
+      );
+    }
 
     this._onSelect = this._onSelect.bind(this);
     this._onMouseLeave = this._onMouseLeave.bind(this);
@@ -362,9 +369,9 @@ class DropdownLayout extends WixComponent {
     const optionClassName = classNames({
       [styles.option]: !overrideStyle,
       [styles.selected]: selected && !overrideStyle && selectedHighlight,
-      wixstylereactSelected: selected && overrideStyle, //global class for items that use the overrideStyle
+      wixstylereactSelected: selected && overrideStyle, // global class for items that use the overrideStyle
       [styles.hovered]: hovered && !overrideStyle,
-      wixstylereactHovered: hovered && overrideStyle, //global class for items that use the overrideStyle
+      wixstylereactHovered: hovered && overrideStyle, // global class for items that use the overrideStyle
       [styles.disabled]: disabled,
       [styles.title]: title,
       [styles.smallHeight]: itemHeight === 'small',
@@ -506,6 +513,7 @@ DropdownLayout.propTypes = {
   /** The id of the selected option in the list  */
   selectedId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   tabIndex: PropTypes.number,
+  /** @deprecated */
   theme: PropTypes.string,
   onClickOutside: PropTypes.func,
   /** A fixed header to the list */
