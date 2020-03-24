@@ -139,6 +139,7 @@ The library contained a lot of old code, including unsupported styles of the des
 - [Components](#components)
   - [\<AddItem/>](#additem)
   - [\<Avatar/>](#avatar)
+  - [\<AutoComplete/>](#autocomplete)
   - [\<AutoCompleteComposite/>](#autocompletecomposite)
   - [\<Badge/>](#badge)
   - [\<BarChart/>](#barchart)
@@ -167,6 +168,7 @@ The library contained a lot of old code, including unsupported styles of the des
   - [\<Loader/>](#loader)
   - [\<MessageBoxFunctionalLayout/>](#messageboxfunctionallayout)
   - [\<MultiSelect/>](#multiselect)
+  - [\<MultiSelectCheckbox/>](#multiselectcheckbox)
   - [\<MultiSelectComposite/>](#multiselectcomposite)
   - [\<NoBorderInput/>](#noborderinput)
   - [\<NumberInput/>](#numberinput)
@@ -254,6 +256,16 @@ Props:
   <Avatar color="A1" />
   ```
 </details>
+
+## \<AutoComplete/>
+
+Props:
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 
 ## \<AutoCompleteComposite/>
 
@@ -358,6 +370,8 @@ Testkit:
 ## \<ColorInput/>
 
 Props:
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -380,8 +394,6 @@ Props:
 - removed `isOpen` - use `initialOpen` instead.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
-  For more information and examples go to [help prop](#help-prop) section.
 
 <details>
   <summary>Using <code>initialOpen</code> prop example:</summary>
@@ -400,6 +412,8 @@ Props:
 ## \<Dropdown/>
 
 Props:
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -408,7 +422,9 @@ Props:
 ## \<DropdownLayout/>
 
 Props:
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
+- removed `theme`. (We once had b2b theme, no longer supported)<br/>
+  Just remove this prop, no other change required.
+
 
 Testkit:
 - removed `hasTheme`
@@ -494,7 +510,8 @@ This component was deleted, use `<FormField/>` instead.
 ## \<GoogleAddressInput/>
 
 Props:
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -542,13 +559,14 @@ Testkit:
 ## \<Input/>
 
 Props:
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
   For more information and examples go to [help prop](#help-prop) section.
 - removed sub component `<Input.Units/>` use `<Input.Affix/>` component instead
 - removed `magnifyingGlass` use `<Input.Affix/>` or `<Search/>` component instead. (see example below)
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
 
 Testkit:
 - removed `hasHelp`
@@ -606,11 +624,8 @@ Testkit:
 
 Props:
 - removed `onTooltipShow`.
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
-  For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
 - added `hasStatus`.
@@ -651,8 +666,12 @@ This component was deleted, use `<FormField/>` instead.
 ## \<InputWithOptions/>
 
 Props:
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 - removed `disableClickOutsideWhenClosed`, this functionality is now permanent. This means the `onClickoutside` callback will no longer be called when the component is in it's collpased state.
 
 ## \<Label/>
@@ -725,7 +744,8 @@ Props:
 ## \<MultiSelect/>
 
 Props:
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -737,6 +757,16 @@ Testkit:
 - added `hasStatusMessage`.
 - added `getStatusMessage`.
 - removed `inputWrapperHasError` - use `hasStatus` instead.
+
+## \<MultiSelectCheckbox/>
+
+Props:
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
+- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
+  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
+- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
+  For more information and examples go to [help prop](#help-prop) section.
 
 ## \<MultiSelectComposite/>
 
@@ -763,11 +793,8 @@ This component was deleted, use `<FormField/>` instead.
 ## \<NoBorderInput/>
 
 Props:
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
-  For more information and examples go to [help prop](#help-prop) section.
 
 Testkit:
 - added `hasStatus`.
@@ -778,7 +805,8 @@ Testkit:
 ## \<NumberInput/>
 
 Props:
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -925,12 +953,6 @@ Testkit:
 
 ## \<RichTextInputArea/>
 
-Props:
-- removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
-  For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
-- removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
-  For more information and examples go to [help prop](#help-prop) section.
-
 Testkit:
 - added `hasStatus`.
 - added `getStatus`.
@@ -942,7 +964,8 @@ Testkit:
 ## \<Search/>
 
 Props:
-- removed `theme` - Look at `<Input/>` component migration guide for more information.
+- removed `theme`.
+  For more information and examples go to [theme prop](#theme-prop) section.
 - removed `error` & `errorMessage` to `status` & `statusMessage`. <br/>
   For more information and examples go to [error --> status](#error--errormessage----status--statusmessage) section.
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead. <br/>
@@ -1492,6 +1515,7 @@ export default () => (
 ## error & errorMessage --> status & statusMessage
 
 Relevant for components:
+- [\<AutoComplete/>](#autocomplete)
 - [\<ColorInput/>](#colorinput)
 - [\<DatePicker/>](#datepicker)
 - [\<Dropdown/>](#dropdown)
@@ -1501,9 +1525,9 @@ Relevant for components:
 - [\<InputArea/>](#inputarea)
 - [\<InputWithOptions/>](#inputwithoptions)
 - [\<MultiSelect/>](#multiselect)
+- [\<MultiSelectCheckbox/>](#multiselectcheckbox)
 - [\<NoBorderInput/>](#noborderinput)
 - [\<NumberInput/>](#numberinput)
-- [\<RichTextInputArea/>](#sidemenu)
 - [\<Search/>](#search)
 
 
@@ -1570,6 +1594,18 @@ Testkit:
 
 ## help prop
 
+Relevant for components:
+- [\<AutoComplete/>](#autocomplete)
+- [\<ColorInput/>](#colorinput)
+- [\<Dropdown/>](#dropdown)
+- [\<GoogleAddressInput/>](#googleaddressinput)
+- [\<Input/>](#input)
+- [\<InputWithOptions/>](#inputwithoptions)
+- [\<MultiSelect/>](#multiselect)
+- [\<MultiSelectCheckbox/>](#multiselectcheckbox)
+- [\<NumberInput/>](#numberinput)
+- [\<Search/>](#search)
+
 Props:
 - removed `help` & `helpMessage` use a `<FormField/>` wrapper instead
 
@@ -1587,3 +1623,25 @@ After:
   <NumberInput />
 </FormField>
 ```
+
+## theme prop
+
+Relevant for components:
+- [\<AutoComplete/>](#autocomplete)
+- [\<ColorInput/>](#colorinput)
+- [\<Dropdown/>](#dropdown)
+- [\<GoogleAddressInput/>](#googleaddressinput)
+- [\<Input/>](#input)
+- [\<InputWithOptions/>](#inputwithoptions)
+- [\<MultiSelect/>](#multiselect)
+- [\<MultiSelectCheckbox/>](#multiselectcheckbox)
+- [\<NumberInput/>](#numberinput)
+- [\<Search/>](#search)
+
+We decided to remove this prop and stop supporting designs that don't align with our UX guidelines.
+The options we suggest is:
+1. Using the component with the default design.
+2. In some cases use `<NoBorderInput/>` that looks somewhat like amaterial theme.
+3. In other cases `<InputWithLabel/>` will be a nice solution
+
+Please contact your UX if needed.

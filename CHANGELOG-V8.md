@@ -51,6 +51,13 @@ Props:
 Props:
 - changed `color` - only values
 
+#### `<AutoComplete/>`
+
+Props:
+- removed `theme`
+- removed `error` & `errorMessage`
+- removed `help` & `helpMessage`
+
 #### `<BarChart/>`
 
 Props:
@@ -74,6 +81,7 @@ Testkit:
 #### `<ColorInput/>`
 
 Props:
+- removed `theme`
 - removed `error` & `errorMessage`
 - removed `help` & `helpMessage`
 
@@ -93,11 +101,11 @@ This component is _internal_ and should not be used directly - use `<Table/>` in
 Props:
 - removed `isOpen`
 - removed `error` & `errorMessage`
-- removed `help` & `helpMessage`
 
 #### `<Dropdown/>`
 
 Props:
+- removed `theme`
 - removed `error` & `errorMessage`
 - removed `help` & `helpMessage`
 
@@ -144,11 +152,11 @@ Testkit:
 #### `<Input/>`
 
 Props:
+- removed `theme`
 - removed `error` & `errorMessage`
 - removed `help` & `helpMessage`
 - removed sub component `<Input.Units/>`
 - removed `magnifyingGlass`
-- removed `theme`
 
 Testkit:
 - removed `hasHelp`
@@ -163,9 +171,7 @@ Testkit:
 
 Props:
 - removed `onTooltipShow`
-- removed `theme`
 - removed `error` & `errorMessage`
-- removed `help` & `helpMessage`
 
 Testkit:
 - added `hasStatus`
@@ -184,7 +190,9 @@ Testkit:
 #### `<InputWithOptions/>`
 
 Props:
+- removed `theme`
 - removed `error` & `errorMessage`
+- removed `help` & `helpMessage`
 - removed `disableClickOutsideWhenClosed`
 
 #### `<LinearProgressBar/>`
@@ -216,12 +224,17 @@ Testkit:
 - added `getStatusMessage`
 - removed `inputWrapperHasError`
 
-#### `<NoBorderInput/>`
+#### `<MultiSelectCheckbox/>`
 
 Props:
 - removed `theme`
 - removed `error` & `errorMessage`
 - removed `help` & `helpMessage`
+
+#### `<NoBorderInput/>`
+
+Props:
+- removed `error` & `errorMessage`
 
 
 Testkit:
@@ -266,10 +279,6 @@ Testkit:
 - removed `isButtonType`
 
 #### `<RichTextInputArea/>`
-
-Props:
-- removed `error` & `errorMessage`
-- removed `help` & `helpMessage`
 
 Testkit:
 - added `hasStatus`
