@@ -42,7 +42,7 @@
     "storybook:e2e": "start-storybook -c ./.storybook/e2e -p 6008",
     "------test": "",
     "pretest": "if [ ! \"$agentType\" = \"pullrequest\" ]; then npm run lint && ./scripts/ensure-dist.sh; fi",
-    "test": "if [ ! \"$agentType\" = \"pullrequest\" ]; then npm run test:unit && npm run test:visual && npm run test:e2e && npm run test:types && npm run sanity; fi",
+    "test": "then npm run test:unit && npm run test:visual && npm run test:e2e && npm run test:types && npm run sanity",
     "test:unit": "yoshi test --jest",
     "test:watch": "yoshi test --jest --watch",
     "pretest:e2e": "./scripts/ensure-dist.sh",
@@ -240,7 +240,7 @@
     "wix-animations": "^1.0.282",
     "wix-eventually": "^2.3.0",
     "wix-ui-backoffice": "^1.0.591",
-    "wix-ui-core": "^2.0.860",
+    "wix-ui-core": "2.0.860",
     "wix-ui-icons-common": "^2.0.119",
     "wix-ui-test-utils": "^1.0.172"
   },
