@@ -1,7 +1,7 @@
 import * as enzyme from 'enzyme';
 import * as puppeteer from 'puppeteer';
 import * as React from 'react';
-import { FooterLayout, HeaderLayout, MessageBoxFunctionalLayout } from '..';
+import {  MessageBoxFunctionalLayout } from '..';
 import { messageBoxFunctionalLayoutTestkitFactory } from '../../../testkit';
 import { messageBoxFunctionalLayoutTestkitFactory as messageBoxFunctionalLayoutEnzymeTestkitFactory } from '../../../testkit/enzyme';
 import { messageBoxFunctionalLayoutTestkitFactory as messageBoxFunctionalLayoutPuppeteerTestkitFactory } from '../../../testkit/puppeteer';
@@ -44,45 +44,6 @@ function MessageBoxFunctionalLayoutWithAllProps() {
   );
 }
 
-function HeaderLayoutWithMandatoryProps() {
-  return <HeaderLayout />;
-}
-
-function HeaderLayoutWithAllProps() {
-  return (
-    <HeaderLayout
-      closeButton
-      onCancel={_ev => {}}
-      theme="blue"
-      title={<div />}
-    />
-  );
-}
-
-function FooterLayoutWithMandatoryProps() {
-  return <FooterLayout />;
-}
-
-function FooterLayoutWithAllProps() {
-  return (
-    <FooterLayout
-      bottomChildren={<div />}
-      buttonsHeight="10px"
-      cancelPrefixIcon={<div />}
-      cancelSuffixIcon={<div />}
-      cancelText="text"
-      confirmPrefixIcon={<div />}
-      confirmSuffixIcon={<div />}
-      confirmText="text"
-      enableCancel
-      enableOk
-      onCancel={_ev => {}}
-      onOk={_ev => {}}
-      sideActions={<div />}
-      theme="blue"
-    />
-  );
-}
 
 async function testkits() {
   const testkit = messageBoxFunctionalLayoutTestkitFactory({

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { mount } from 'enzyme';
-import ListItemSection, {listItemSectionBuilder, TYPES} from '..';
+import ListItemSection, {listItemSectionBuilder} from '..';
 import { listItemSectionTestkitFactory } from '../../../testkit';
 import { listItemSectionTestkitFactory as listItemSectionEnzymeTestkitFactory } from '../../../testkit/enzyme';
 
@@ -16,14 +16,6 @@ async function testkits() {
     dataHook: 'hi',
     wrapper: mount(<div />),
   });
-}
-function listItemSectionTypesConst() {
-  console.log(
-    TYPES.DIVIDER,
-    TYPES.SUBHEADER,
-    TYPES.TITLE,
-    TYPES.WHITESPACE
-  )
 }
 
 function listItemSectionBuilderWithMandatoryProps() {
