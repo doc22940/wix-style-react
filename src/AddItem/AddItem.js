@@ -99,8 +99,7 @@ class AddItem extends Component {
     ].forEach(prop => {
       if (props.hasOwnProperty(prop)) {
         deprecationLog(
-          `do not use '${prop}' prop, use 'tooltipProps' prop instead.`,
-          `<AddItem/> - do not use '${prop}' prop, use 'tooltipProps' prop instead.`,
+          `<AddItem/> - '${prop}' prop is deprecated, use 'tooltipProps' prop instead.`,
         );
       }
     });
