@@ -75,6 +75,8 @@ npx wix-ui-codemod wix-style-react/icons-common <path-to-your-project>
 
 4. Remove `<DataTable/>` - This component became _internal_ and should not be used directly - use `<Table/>` instead.
 
+5. Remove `<HeaderLayout>`, `<HeaderLayout1>`, `<FooterLayout>`, `<FooterLayout1>`, `<MessageBoxLayout2>`, `<MessageBoxLayout1>` - these components no longer available. Use `<MessageBoxMarketerialLayout>` or `<MessageBoxFunctionalLayout>` instead.
+
 ### API Changes for big components
 - `<Page/>` - remove `upgrade`, to better performance, new API features and slickness.
 - `<PopoverMenu/>` - Change implementation to the previously `beta PopoverMenu`
@@ -161,6 +163,7 @@ The library contained a lot of old code, including unsupported styles of the des
   - [\<InputWithOptions/>](#inputwithoptions)
   - [\<Label/>](#label)
   - [\<LinearProgressBar/>](#linearprogressbar)
+  - [\<ListItemSection/>](#listitemsection)
   - [\<Loader/>](#loader)
   - [\<MessageBoxFunctionalLayout/>](#messageboxfunctionallayout)
   - [\<MultiSelect/>](#multiselect)
@@ -703,6 +706,11 @@ Testkit:
 - changed `getTooltipErrorMessage` in driver (not uni) returns a `string` instead of a `Promise<string>`.
 - removed `getTooltip` - use `isErrorIconShown` and `getTooltipErrorMessage` instead.
 - removed `isTooltipShown` - use `isErrorIconShown` and `getTooltipErrorMessage` instead.
+
+## \<ListItemSection/>
+
+General:
+- TYPES export no longer is supported. Import types definitions through: `ListItemSectionProps`.
 
 ## \<Loader/>
 
