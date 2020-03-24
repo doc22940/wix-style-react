@@ -20,11 +20,13 @@ class InputArea extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    if (this.props.error || this.props.errorMessage) {
+
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
       deprecationLog(
-        'InputArea error and errorMessage props are deprecated. Please use status and statusMessage',
+        '<InputArea/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
       );
     }
+
     this._onKeyDown = this._onKeyDown.bind(this);
     this._onChange = this._onChange.bind(this);
     this._onInput = this._onInput.bind(this);

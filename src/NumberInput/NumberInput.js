@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from '../Input';
+import deprecationLog from '../utils/deprecationLog';
 
 class NumberInput extends React.PureComponent {
   static displayName = 'NumberInput';
@@ -11,6 +12,24 @@ class NumberInput extends React.PureComponent {
     this.state = {
       value: this._defaultValueNullIfEmpty(value),
     };
+
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
+      deprecationLog(
+        '<NumberInput/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('help') || props.hasOwnProperty('helpMessage')) {
+      deprecationLog(
+        '<NumberInput/> - help and helpMessage props are deprecated. Please use <FormField/> as a wrapper instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('theme')) {
+      deprecationLog(
+        '<NumberInput/> - theme props is deprecated, please contact us or your UX if needed.',
+      );
+    }
   }
 
   UNSAFE_componentWillReceiveProps({ value }) {

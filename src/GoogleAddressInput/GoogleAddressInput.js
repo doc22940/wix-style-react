@@ -43,7 +43,19 @@ class GoogleAddressInput extends React.Component {
 
     if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
       deprecationLog(
-        '<GoogleAddressInput/> - props error and errorMessage are deprecated. Please use status="error" and statusMessage',
+        '<GoogleAddressInput/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('help') || props.hasOwnProperty('helpMessage')) {
+      deprecationLog(
+        '<GoogleAddressInput/> - help and helpMessage props are deprecated. Please use <FormField/> as a wrapper instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('theme')) {
+      deprecationLog(
+        '<GoogleAddressInput/> - theme props is deprecated, please contact us or your UX if needed.',
       );
     }
   }
@@ -346,7 +358,7 @@ GoogleAddressInput.propTypes = {
   /** The status message to display when hovering the status icon, if not given or empty there will be no tooltip */
   statusMessage: PropTypes.node,
 
-  /** Should display error marker */
+  /** @deprecated Should display error marker */
   error: PropTypes.bool,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,

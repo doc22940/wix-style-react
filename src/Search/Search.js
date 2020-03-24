@@ -9,6 +9,7 @@ import SearchIcon from 'wix-ui-icons-common/Search';
 import { StringUtils } from '../utils/StringUtils';
 import styles from './Search.scss';
 import Input from '../Input/Input';
+import deprecationLog from '../utils/deprecationLog';
 
 // because lodash debounce is not compatible with jest timeout mocks
 function debounce(fn, wait) {
@@ -66,6 +67,24 @@ class Search extends Component {
       inputValue: initialValue,
       collapsed: props.expandable && !initialValue && !props.autoFocus,
     };
+
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
+      deprecationLog(
+        '<Search/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('help') || props.hasOwnProperty('helpMessage')) {
+      deprecationLog(
+        '<Search/> - help and helpMessage props are deprecated. Please use <FormField/> as a wrapper instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('theme')) {
+      deprecationLog(
+        '<Search/> - theme props is deprecated, please contact us or your UX if needed.',
+      );
+    }
   }
 
   componentDidUpdate(prevProps) {

@@ -25,9 +25,9 @@ class ImageViewer extends Component {
       previousImageUrl: undefined,
     };
 
-    if (this.props.error || this.props.errorMessage) {
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
       deprecationLog(
-        'Props error and errorMessage are deprecated. Please use status and statusMessage',
+        '<ImageViewer/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
       );
     }
   }
@@ -364,11 +364,13 @@ ImageViewer.propTypes = {
 
   /** Show error icon
    * @deprecated
+   * @see status
    */
   error: PropTypes.bool,
 
   /** Error tooltip message
    * @deprecated
+   * @see statusMessage
    */
   errorMessage: PropTypes.string,
 

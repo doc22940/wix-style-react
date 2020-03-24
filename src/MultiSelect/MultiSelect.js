@@ -15,9 +15,21 @@ class MultiSelect extends InputWithOptions {
   constructor(props) {
     super(props);
 
-    if (props.error || props.errorMessage) {
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
       deprecationLog(
-        'Multiselect error and errorMessage props are deprecated. Please use status and statusMessage',
+        '<MultiSelect/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('help') || props.hasOwnProperty('helpMessage')) {
+      deprecationLog(
+        '<MultiSelect/> - help and helpMessage props are deprecated. Please use <FormField/> as a wrapper instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('theme')) {
+      deprecationLog(
+        '<MultiSelect/> - theme props is deprecated, please contact us or your UX if needed.',
       );
     }
 

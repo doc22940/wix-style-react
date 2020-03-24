@@ -4,10 +4,33 @@ import InputWithOptions from '../InputWithOptions/InputWithOptions';
 import Input from '../Input';
 import Checkbox from '../Checkbox/Checkbox';
 import styles from './MultiSelectCheckbox.scss';
+import deprecationLog from '../utils/deprecationLog';
 
 const OPEN_DROPDOWN_CHARS = ['Enter', 'ArrowDown', 'Space', ' '];
 
 class MultiSelectCheckbox extends InputWithOptions {
+  constructor(props) {
+    super(props);
+
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
+      deprecationLog(
+        '<MultiSelectCheckbox/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('help') || props.hasOwnProperty('helpMessage')) {
+      deprecationLog(
+        '<MultiSelectCheckbox/> - help and helpMessage props are deprecated. Please use <FormField/> as a wrapper instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('theme')) {
+      deprecationLog(
+        '<MultiSelectCheckbox/> - theme props is deprecated, please contact us or your UX if needed.',
+      );
+    }
+  }
+
   wrapOptionsWithCheckbox(options) {
     const newOptions = options.map(option => ({
       ...option,

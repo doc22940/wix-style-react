@@ -52,8 +52,16 @@ export default class DatePicker extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    if (props.isOpen !== undefined) {
-      deprecationLog('DatePicker isOpen is deprecated. Please use initialOpen');
+    if (props.hasOwnProperty('error') || props.hasOwnProperty('errorMessage')) {
+      deprecationLog(
+        '<DatePicker/> - error and errorMessage props are deprecated. Please use status="error" and statusMessage instead.',
+      );
+    }
+
+    if (props.hasOwnProperty('isOpen')) {
+      deprecationLog(
+        '<DatePicker/> - isOpen prop is deprecated. Please use initialOpen instead.',
+      );
     }
 
     const initialOpen =
