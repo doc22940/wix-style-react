@@ -6,12 +6,6 @@ export type ListItemSectionTypes =
   | 'title'
   | 'subheader';
 
-export const TYPES: {
-  WHITESPACE: 'whitespace',
-  DIVIDER: 'divider',
-  TITLE: 'title',
-  SUBHEADER: 'subheader',
-}
 
 export interface ListItemSectionProps {
   dataHook?: string;

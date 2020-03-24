@@ -1,1 +1,1 @@
-export { default, listItemSectionBuilder, TYPES } from './ListItemSection.js';
+export { default, listItemSectionBuilder } from './ListItemSection.js';

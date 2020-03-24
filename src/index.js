@@ -1,10 +1,3 @@
-import {
-  MessageBoxMarketerialLayout,
-  MessageBoxFunctionalLayout,
-  HeaderLayout,
-  FooterLayout,
-} from './MessageBox';
-
 export { default as PopoverMenu } from './PopoverMenu';
 export { default as AddItem } from './AddItem';
 export { default as Avatar } from './Avatar';
@@ -18,14 +11,8 @@ export { default as Modal } from './Modal';
 export { default as ModalSelectorLayout } from './ModalSelectorLayout';
 export {
   MessageBoxMarketerialLayout,
-  MessageBoxMarketerialLayout as MessageBoxLayout1,
   MessageBoxFunctionalLayout,
-  MessageBoxFunctionalLayout as MessageBoxLayout2,
-  HeaderLayout,
-  HeaderLayout as HeaderLayout1,
-  FooterLayout,
-  FooterLayout as FooterLayout1,
-};
+} from './MessageBox';
 export { default as RadioGroup } from './RadioGroup';
 export { default as RadioButton } from './RadioGroup/RadioButton/RadioButton';
 export { default as Slider } from './Slider';
@@ -85,13 +72,8 @@ export {
   AutoAdjustedColumns as AutoAdjustedRow,
   Col,
 } from './Grid';
-
 export { Layout, Cell } from './Layout';
-export {
-  default as Typography,
-  convertFromUxLangToCss,
-  convertFromCssToUxLang,
-} from './Typography';
+export { default as Typography } from './Typography';
 export { default as GenericModalLayout } from './GenericModalLayout';
 export { default as TextButton } from './TextButton';
 export { default as IconButton } from './IconButton';
@@ -161,7 +143,6 @@ export { default as VerticalTabsItem } from './VerticalTabsItem';
 export {
   default as ListItemSection,
   listItemSectionBuilder,
-  TYPES as ListItemSectionTypes,
 } from './ListItemSection';
 export { default as BrowserPreviewWidget } from './BrowserPreviewWidget';
 export { default as MarketingLayout } from './MarketingLayout';
