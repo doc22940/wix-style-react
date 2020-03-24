@@ -241,7 +241,8 @@ _Note: `tooltipProps` are defined in Tooltip component story page._
 ## \<Avatar/>
 
 Props:
-- `color` - Deprecated old values: 'blue', 'green', 'grey', 'red', 'orange'. the new values are now A1 to A6.
+- `color` - Deprecated old values: 'blue', 'green', 'grey', 'red', 'orange'. the new values are now A1 to A6.<br/>
+  There is no specific mapping between old values to new, contact your UX designer if needed.
 
 <details>
   <summary>Using new <code>color</code> prop values example:</summary>
