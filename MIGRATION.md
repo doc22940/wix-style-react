@@ -869,13 +869,17 @@ Props:
 
 Old PopoverMenu component was removed and replaced with new component that was previously available as `beta/PopoverMenu`.
 
+Props:
+- removed `buttonTheme` prop. Instead, use the `triggerElement` prop and set <IconButton/> with the relevant `skin`.
+- `appentToParent` prop should be changed to `appendTo="parent"`.
+
 Old PopoverMenu:
 
 ```jsx
 import PopoverMenu from 'wix-style-react/PopoverMenu';
 import PopoverMenuItem from 'wix-style-react/PopoverMenuItem';
 
-<PopoverMenu>
+<PopoverMenu buttonTheme="icon-greybackground">
   <PopoverMenuItem onClick={clickHandler} text="Item" />
 </PopoverMenu>;
 ```
