@@ -33,7 +33,7 @@ export default {
 
   componentProps: {
     fill: '',
-    tooltipContent: 'hello there',
+    tooltipProps: { content: 'hello there' },
   },
 
   sections: [
@@ -43,7 +43,7 @@ export default {
         'https://github.com/wix/wix-style-react/tree/master/src/FillButton/',
       component: (
         <Box height="24px">
-          <FillButton tooltipContent="Hello there" />{' '}
+          <FillButton tooltipProps={{ content: 'hello there' }} />
         </Box>
       ),
     }),
