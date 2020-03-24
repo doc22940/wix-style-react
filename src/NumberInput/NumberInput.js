@@ -27,7 +27,7 @@ class NumberInput extends React.PureComponent {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<NumberInput/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<NumberInput/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }

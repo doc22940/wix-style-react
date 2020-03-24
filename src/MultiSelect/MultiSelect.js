@@ -29,7 +29,7 @@ class MultiSelect extends InputWithOptions {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<MultiSelect/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<MultiSelect/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
 

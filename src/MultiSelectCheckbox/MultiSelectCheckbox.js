@@ -26,7 +26,7 @@ class MultiSelectCheckbox extends InputWithOptions {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<MultiSelectCheckbox/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<MultiSelectCheckbox/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }

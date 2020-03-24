@@ -39,7 +39,7 @@ class Dropdown extends InputWithOptions {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<Dropdown/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<Dropdown/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }

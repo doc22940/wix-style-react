@@ -35,7 +35,7 @@ class DropdownLayout extends WixComponent {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<DropdownLayout/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<DropdownLayout/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
 

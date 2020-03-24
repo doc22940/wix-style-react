@@ -103,7 +103,7 @@ class ColorInput extends React.Component {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<ColorInput/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<ColorInput/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }

@@ -30,7 +30,7 @@ class AutoComplete extends InputWithOptions {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<AutoComplete/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<AutoComplete/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }

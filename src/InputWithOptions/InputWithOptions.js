@@ -64,7 +64,7 @@ class InputWithOptions extends Component {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<InputWithOptions/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<InputWithOptions/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
 

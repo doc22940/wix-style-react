@@ -47,7 +47,7 @@ class Input extends Component {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<Input/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<Input/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }

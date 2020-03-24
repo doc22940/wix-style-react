@@ -55,7 +55,7 @@ class GoogleAddressInput extends React.Component {
 
     if (props.hasOwnProperty('theme')) {
       deprecationLog(
-        '<GoogleAddressInput/> - theme props is deprecated, please contact us or your UX if needed.',
+        '<GoogleAddressInput/> - theme prop is deprecated, please contact us or your UX if needed.',
       );
     }
   }
