@@ -124,7 +124,7 @@ tests.forEach(({ describe, its }) => {
                   subtitle={props.subtitle}
                   suffix={props.suffix}
                 />
-
+                <Card.Divider />
                 <Card.Content size={props.contentSize}>sdf</Card.Content>
               </Card>
             </Col>

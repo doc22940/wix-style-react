@@ -64,6 +64,7 @@ class CardWithEditableSelector extends React.Component {
             <Col span={4}>
               <Card>
                 <Card.Header title="Editable Selector Inside Card" />
+                <Card.Divider />
                 <Card.Content>
                   <EditableSelector
                     dataHook={storySettings.dataHook}

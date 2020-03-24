@@ -8,7 +8,6 @@ A card header component
 | `title` | node | | false | a placeholder for text title or any custom node |
 | `subtitle` | node |  | false | a placeholder for text subtitle or any custom node |
 | `suffix` | node |  | false | a render slot for action nodes, for example buttons |
-| `withoutDivider` |  | false | false | disables default bottom divider |
 
 ### `<Card.Subheader/>`
 A card sub-header component

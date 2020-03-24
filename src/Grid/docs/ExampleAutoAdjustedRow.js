@@ -24,6 +24,7 @@ export default () => (
               </Tooltip>
             }
           />
+          <Card.Divider />
           <Card.Content>
             <Text>
               Here comes some AMAZING content that will blow your mind. Or just
@@ -46,24 +47,29 @@ export default () => (
               </Tooltip>
             }
           />
+          <Card.Divider />
         </Card>
       </AutoAdjustedRow>
 
       <AutoAdjustedRow>
         <Card>
           <Card.Header title="Card 1" />
+          <Card.Divider />
         </Card>
 
         <Card>
           <Card.Header title="Card 2" />
+          <Card.Divider />
         </Card>
 
         <Card>
           <Card.Header title="Card 3" />
+          <Card.Divider />
         </Card>
 
         <Card>
           <Card.Header title="Card 4" />
+          <Card.Divider />
         </Card>
       </AutoAdjustedRow>
     </Container>

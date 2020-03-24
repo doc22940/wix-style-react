@@ -21,6 +21,7 @@ class StepperWithCard extends React.PureComponent {
             />
           }
         />
+        <Card.Divider />
         <Card.Content>
           Here goes the content of step #{this.state.activeStep + 1}
         </Card.Content>

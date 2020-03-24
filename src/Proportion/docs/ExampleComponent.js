@@ -23,6 +23,7 @@ export default class ExampleComponent extends Component {
             <Col span={8}>
               <Card>
                 <Card.Header title="Square Proportion" />
+                <Card.Divider />
                 <Card.Content>I don't maintain proportion</Card.Content>
               </Card>
             </Col>
@@ -36,6 +37,7 @@ export default class ExampleComponent extends Component {
             <Col span={8}>
               <Card>
                 <Card.Header title="Portrait Proportion" />
+                <Card.Divider />
                 <Card.Content>I don't maintain proportion</Card.Content>
               </Card>
             </Col>
@@ -49,6 +51,7 @@ export default class ExampleComponent extends Component {
             <Col span={8}>
               <Card>
                 <Card.Header title="Cinema Proportion" />
+                <Card.Divider />
                 <Card.Content>I don't maintain proportion</Card.Content>
               </Card>
             </Col>
@@ -62,6 +65,7 @@ export default class ExampleComponent extends Component {
             <Col span={8}>
               <Card>
                 <Card.Header title="Landscape Proportion" />
+                <Card.Divider />
                 <Card.Content>I don't maintain proportion</Card.Content>
               </Card>
             </Col>
@@ -75,6 +79,7 @@ export default class ExampleComponent extends Component {
             <Col span={8}>
               <Card>
                 <Card.Header title="Custom Proportion (9.5 / 3)" />
+                <Card.Divider />
                 <Card.Content>I don't maintain proportion</Card.Content>
               </Card>
             </Col>

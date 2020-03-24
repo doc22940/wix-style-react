@@ -140,6 +140,7 @@ The library contained a lot of old code, including unsupported styles of the des
   - [\<AutoCompleteComposite/>](#autocompletecomposite)
   - [\<Badge/>](#badge)
   - [\<BarChart/>](#barchart)
+  - [\<Card.Header/>](#cardheader)
   - [\<CircularProgressBar/>](#circularprogressbar)
   - [\<ColorInput/>](#colorinput)
   - [\<DataTable/>](#datatable)
@@ -313,6 +314,33 @@ Testkit:
 Props:
 - removed `deprecatedColors`.
   Just remove this prop, no other change required.
+
+## \<Card.Header/>
+
+Props:
+- removed `withoutDivider` - use `<Card.Divider/>` when needed.
+
+<details>
+  <summary>Using own dataHook over <code><span><</span>Card.Divider/></code> example:</summary>
+
+  - Before:
+  ```jsx
+  <Card>
+    <Card.Header title="Card title" withoutDivider={false} />
+    <Card.Content>...</Card.Content>
+  </Card>
+  ```
+_Pay attention: In all places without withoutDivider, the divider will disappear automatically! Be sure to add a `<Card.Divider/>`_
+
+  - After:
+  ```jsx
+  <Card>
+    <Card.Header title="Card title" />
+    <Card.Divider />
+    <Card.Content>...</Card.Content>
+  </Card>
+  ```
+</details>
 
 ## \<CircularProgressBar/>
 

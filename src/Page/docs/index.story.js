@@ -149,6 +149,7 @@ export default {
                         <Col span={6}>
                           <Card>
                             <Card.Header title="Card"/>
+                            <Card.Divider />
                             <Card.Content>
                               Some content
                             </Card.Content>
@@ -279,6 +280,7 @@ export default {
                           <Page.Sticky>
                             <Card>
                               <Card.Header title="Sticky" />
+                              <Card.Divider />
                               <Card.Content>Some menu or other content</Card.Content>
                             </Card>
                           </Page.Sticky>

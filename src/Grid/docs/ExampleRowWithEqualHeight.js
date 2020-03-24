@@ -12,12 +12,8 @@ export default () => (
       <Row stretchViewsVertically>
         <Col span={8}>
           <Card stretchVertically>
-            <Card.Header
-              withoutDivider
-              subtitle="subtitle"
-              title="Header without Divider"
-            />
-
+            <Card.Header subtitle="subtitle" title="Header without Divider" />
+            <Card.Divider />
             <Card.Content>
               <Row>
                 <Col span={4}>{field()}</Col>
@@ -40,6 +36,7 @@ export default () => (
         <Col span={4}>
           <Card stretchVertically>
             <Card.Header title="Side Card" />
+            <Card.Divider />
             <Card.Content>
               <Row>
                 <Col>{field()}</Col>

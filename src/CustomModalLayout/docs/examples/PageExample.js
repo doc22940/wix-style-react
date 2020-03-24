@@ -36,6 +36,7 @@ class PageExample extends React.Component {
                       <Col>
                         <Card>
                           <Card.Header title="Card 1" />
+                          <Card.Divider />
                           <Card.Content><Text size="medium">Lorem ipsum dolor</Text></Card.Content>
                         </Card>
                       </Col>
@@ -44,6 +45,7 @@ class PageExample extends React.Component {
                       <Col>
                         <Card>
                           <Card.Header title="Card 2" />
+                          <Card.Divider />
                           <Card.Content><Text size="medium">Lorem ipsum dolor</Text></Card.Content>
                         </Card>
                       </Col>

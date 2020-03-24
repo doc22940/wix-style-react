@@ -1,8 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Animator } from 'wix-animations';
-
-import Divider from '../Divider';
 import styles from './Header.scss';
 import Heading from '../../Heading';
 import Text from '../../Text';
@@ -23,22 +20,15 @@ class Header extends React.PureComponent {
     subtitle: PropTypes.node,
 
     suffix: PropTypes.node,
-
-    /** define whether header border on the bottom is visible
-     * deprecated! use <Card.Divider/> instead
-     * @deprecated
-     * */
-    withoutDivider: PropTypes.bool,
   };
 
   static defaultProps = {
     subtitle: null,
     suffix: null,
-    withoutDivider: false,
   };
 
   render() {
-    const { dataHook, title, subtitle, withoutDivider, suffix } = this.props;
+    const { dataHook, title, subtitle, suffix } = this.props;
 
     return (
       <div data-hook={dataHook}>
@@ -65,10 +55,6 @@ class Header extends React.PureComponent {
             />
           )}
         </div>
-
-        <Animator opacity timing="medium" show={!withoutDivider}>
-          <Divider />
-        </Animator>
       </div>
     );
   }

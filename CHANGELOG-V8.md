@@ -56,6 +56,11 @@ Props:
 Props:
 - removed `deprecatedColors`
 
+#### `<Card/>`
+
+Props:
+- removed `withoutDivider`
+
 #### `<CircularProgressBar/>`
 
 Props:

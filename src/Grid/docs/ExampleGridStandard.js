@@ -10,7 +10,7 @@ export default () => (
         <Col span={8}>
           <Card>
             <Card.Header subtitle="Card Subtitle" title="Card Header" />
-
+            <Card.Divider />
             <Card.Content>
               <Container fluid>
                 <Row>
@@ -36,7 +36,7 @@ export default () => (
         <Col span={4}>
           <Card>
             <Card.Header title="Side Card" />
-
+            <Card.Divider />
             <Card.Content>
               <Container fluid>
                 <Row>
@@ -59,7 +59,7 @@ export default () => (
         <Col span={12}>
           <Card>
             <Card.Header title="Full width Card" />
-
+            <Card.Divider />
             <Card.Content>
               <Container fluid>
                 <Row>

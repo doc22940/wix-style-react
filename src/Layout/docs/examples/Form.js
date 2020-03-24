@@ -21,6 +21,7 @@ export default () => (
           <Cell>
             <Card>
               <Card.Header title="Various Inputs" />
+              <Card.Divider />
               <Card.Content>
                 <Layout>
                   <Cell>{field('Your Best Joke:', InputArea)}</Cell>
@@ -94,6 +95,7 @@ export default () => (
       <Cell span={4}>
         <Card>
           <Card.Header title="Additional Info" />
+          <Card.Divider />
           <Card.Content>
             <Text>{'No need for <Layout> for just column'}</Text>
 
@@ -129,6 +131,7 @@ function card(title, children) {
   return (
     <Card>
       <Card.Header title={title} />
+      <Card.Divider />
       <Card.Content children={children} />
     </Card>
   );

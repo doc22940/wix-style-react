@@ -19,6 +19,7 @@ function card() {
   return (
     <Card>
       <Card.Header title="Card" />
+      <Card.Divider />
       <Card.Content>
         <div style={{ height: '150px' }} />
       </Card.Content>

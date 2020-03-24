@@ -61,6 +61,7 @@ class StatsWrapper extends React.Component {
     return (
       <Card>
         <Card.Header title={'Article performance'} suffix={this._getSuffix()} />
+        <Card.Divider />
         <Card.Content>
           <StatisticsWidget items={getData(date, filter)} />
         </Card.Content>

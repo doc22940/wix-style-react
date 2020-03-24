@@ -113,6 +113,7 @@ storiesOf('Accordion', module).add('skins', () => (
 storiesOf('Accordion', module).add('inCard', () => (
   <Card>
     <Card.Header title="Card with Accordion" />
+    <Card.Divider />
     <Accordion
       items={[
         {

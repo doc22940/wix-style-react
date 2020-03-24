@@ -71,6 +71,7 @@ const { Header, Subheader, Content, Divider} = Card;
               source: `
                 <Card>
                   <Card.Header title="Card title" subtitle="This is how a subtitle looks like" suffix={<Button prefixIcon={<Icons.Add/>}>New Item</Button>}/>
+                  <Card.Divider />
                   <Box height="160px"/>
                 </Card>
                 `,
@@ -82,7 +83,7 @@ const { Header, Subheader, Content, Divider} = Card;
                 "Card's sub-header is and area that can contain title and additional action using <Card.Subheader/>",
               source: `
                 <Card>
-                  <Card.Header title="Order Summary" withoutDivider/>
+                  <Card.Header title="Order Summary"/>
                   <Card.Subheader title="Products to Fulfill" suffix={<Button size="tiny">Create Label</Button>}/>
                   <Box height="160px"/>
                 </Card>
@@ -151,11 +152,11 @@ const { Header, Subheader, Content, Divider} = Card;
                       <Card>
                         <Card.Header
                           title="Card with collapsable content"
-                          withoutDivider={!this.state.isOpen}
                           suffix={
                             <ToggleSwitch checked={this.state.isOpen} onChange={() => this.setState({isOpen: !this.state.isOpen})}/>
                           }
                         />
+                        {this.state.isOpen && <Card.Divider />}
                         <Collapse open={this.state.isOpen}>
                           <Card.Content>
                             <Box height="160px"/>
@@ -185,6 +186,7 @@ const { Header, Subheader, Content, Divider} = Card;
                     <Col span={8}>
                       <Card>
                         <Card.Header title="First Card"/>
+                        <Card.Divider />
                         <Card.Content>
                           <EmptyState
                             title="You don't have any items yet"
@@ -199,6 +201,7 @@ const { Header, Subheader, Content, Divider} = Card;
                     <Col span={4}>
                       <Card>
                         <Card.Header title="Second Card"/>
+                        <Card.Divider />
                         <Card.Content>
                           <Box align="center">
                             <Avatar size="size72"/>

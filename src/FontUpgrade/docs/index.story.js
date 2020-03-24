@@ -48,6 +48,7 @@ export default {
 <FontUpgrade>
   <Card>
     <Card.Header title="Madefor Card" />
+    <Card.Divider />
     <Card.Content>
       <EmptyState
         title="This content is using the new Madefor font"

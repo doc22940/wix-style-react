@@ -6,6 +6,7 @@ import Card from 'wix-style-react/Card';
 render(
   <Card>
     <Card.Header title={'Article performance'} />
+    <Card.Divider />
     <Card.Content>
       <StatisticsWidget
         items={[

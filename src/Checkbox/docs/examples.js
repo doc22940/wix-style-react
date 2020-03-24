@@ -21,6 +21,7 @@ export const checkboxStates = `
 export const selectionArea = `
 <Card>
     <Card.Header title="Selection Area" />
+    <Card.Divider />
     <Card.Content>
       <Layout>
         <Cell>

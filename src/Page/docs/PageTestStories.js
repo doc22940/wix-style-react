@@ -69,6 +69,7 @@ PageTestStories.add('11. With Notification', () => (
       <Page.Content>
         <Card>
           <Card.Header title="Hello" />
+          <Card.Divider />
           <Card.Content>
             <LongTextContent />
           </Card.Content>

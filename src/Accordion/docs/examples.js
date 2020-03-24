@@ -54,6 +54,7 @@ export const disabled = `
 export const inCard = `
 <Card>
   <Card.Header title="Card with Accordion"/>
+  <Card.Divider />
   <Accordion
     items={
       [

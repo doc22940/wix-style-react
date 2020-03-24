@@ -32,6 +32,7 @@ function Section({ title, height }) {
   return (
     <Card>
       <Card.Header title={title} />
+      <Card.Divider />
       <Card.Content>
         <div style={{ height }} />
       </Card.Content>
